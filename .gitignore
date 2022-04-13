@@ -67,3 +67,11 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+.env
+.env.development
+QUERY.txt
+src/images/mountain.jpg
+src/images/q.jpg
+src/images/snow.jpg
+banner backup
