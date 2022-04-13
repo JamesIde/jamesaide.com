@@ -2,12 +2,12 @@ import React from "react"
 import Layout from "../components/Layout"
 import Banner from "../components/Banner"
 import Card from "../components/Card"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import FeaturedCollection from "../components/FeaturedCollection"
 
 import { graphql, useStaticQuery } from "gatsby"
 
 export default function Home() {
-  const hike = useStaticQuery(graphql`
+  const records = useStaticQuery(graphql`
     query MyQuery {
       allContentfulRecord {
         edges {
@@ -24,18 +24,15 @@ export default function Home() {
       }
     }
   `)
-  const trips = hike.allContentfulRecord
+  const latestRecord = records.allContentfulRecord
 
   return (
     <Layout>
       <Banner />
-      <div
-        className="
-    container mx-auto"
-      >
-        <div className="text-center p-2 pt-10 pb-10 ">LATEST ADVENTURE</div>
+      <div>
+        <h1 className="text-center text-3xl mb-3 mt-3">LATEST RECORDS</h1>
       </div>
-      {trips.edges.map(function (edge) {
+      {latestRecord.edges.map(edge => {
         return (
           <Card
             slug={edge.node.slug}
@@ -46,6 +43,7 @@ export default function Home() {
           />
         )
       })}
+      <FeaturedCollection />
     </Layout>
   )
 }
