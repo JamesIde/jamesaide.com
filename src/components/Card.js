@@ -7,9 +7,9 @@ function Card({ slug, title, image, date, description }) {
       className="
     container mx-auto"
     >
-      <div className="text-white pb-5">
-        <div className="md:w-[900px] sm:w-[600px]  overflow-hidden shadow-lg mx-auto ">
-          <Link to={slug}>
+      <div className="text-black pb-5">
+        <div className="lg:w-[900px] md:w-[600px] overflow-hidden shadow-lg mx-auto">
+          <Link to={`records/${slug}`}>
             <GatsbyImage
               alt={title}
               image={getImage(image)}
@@ -17,9 +17,11 @@ function Card({ slug, title, image, date, description }) {
               className="md:h-[550px]"
             />
           </Link>
-          <div className="px-6 py-4 bg-gray-700 max-w-fit mx-auto">
+          <div className="px-6 py-4 bg-white max-w-fit mx-auto">
             <div className="font-bold text-xl mb-4 max-w-fit mx-auto hover:text-sky-700">
-              <Link to={slug}>{title}</Link>
+              <Link to={`records/${slug}`} className="duration-500">
+                {title}
+              </Link>
             </div>
             <p className="text-base ">{description}</p>
             <p className="text-right ">{date}</p>

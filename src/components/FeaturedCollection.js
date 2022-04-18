@@ -21,13 +21,11 @@ export default function FeaturedCollection() {
 
   const featuredCollection = collections.allContentfulPhotoCollection
   return (
-    <div className="mx-auto h-auto w-3/5 mt-5">
+    <div className="lg:w-4/5 sm:w-[600px] overflow-hidden mx-auto">
       <div>
-        <h1 className="text-center text-3xl mb-3 mt-3">
-          LATEST PHOTO COLLECTIONS
-        </h1>
+        <h1 className="text-center text-3xl mt-3">LATEST PHOTO COLLECTIONS</h1>
       </div>
-      <div class="grid grid-cols-2 gap-3">
+      <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-3">
         {featuredCollection.edges.map(edge => {
           return (
             <Link to={`/collections/${edge.node.slug}`}>

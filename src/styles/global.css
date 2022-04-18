@@ -4,14 +4,133 @@
 @tailwind components;
 @tailwind utilities;
 
-.text-changer{
-   
+/* Photo Collection Image Grid */
+.collection-grid {
+    --gap-length: 1rem;
+    --row-height: 240px;
+    --column-width: 300px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--column-width), 1fr));
+    grid-auto-rows: var(--row-height);
+    grid-gap: var(--gap-length);
+    margin: 20px 0;
 }
 
-.banner{
+.collection-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.collection-img-span2 {
+    grid-row-end: span 2;
+}
+
+/* Record Image Grid */
+.record-grid {
+    --gap-length: 2px;
+    --row-height: 200px;
+    --column-width: 220px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--column-width), 1fr));
+    grid-auto-rows: var(--row-height);
+    grid-gap: var(--gap-length);
+    margin: 20px 0;
+}
+
+.record-img {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+}
+
+.record-img-span2 {
+    grid-row-end: span 2;
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Gatsby Background Image  */
+.banner {
     height: 76vh;
     background-position: 50% 50%;
-    object-fit:cover;
+    object-fit: cover;
+    padding: 0;
+    margin: 0;
+}
+
+.bg-blurred {
+    background-color: rgba(0, 0, 0, .75)
+}
+
+/* Headlines with lines */
+.decorated{
+    overflow: hidden;
+    text-align: center;
+}
+.decorated > span{
+   position: relative;
+   display: inline-block;
+}
+
+.decorated > span:before, .decorated > span:after{
+   content: '';
+   position: absolute;
+   top: 50%;
+   border-bottom: 2px solid;
+   width: 60px; /* half of limiter*/
+   margin: 0 10px;
+}
+
+.decorated > span:before{
+   right: 100%;
+}
+
+.decorated > span:after{
+   left: 100%;
+}
+
+.day-icons{
+    margin: 5px;
+    padding-bottom: 10px;
+}
+
+
+.main-wrapper> p, h1{
+    /* padding-bottom: 15px; */
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    color:white;
+}
+
+li{
+    padding-left: 15px;
+    padding-right: 15px; 
+}
+
+li{
+    line-height: 1em;
+    list-style-position: unset;
+}
+
+.hiking{
+    list-style-image: url(../svg/dayicons/hiking.svg);
+}
+.distance{
+    list-style-image: url(../svg/dayicons/distance.svg);
+}
+.time{
+    list-style-image: url(../svg/dayicons/time.svg);
+}
+.camping{
+    list-style-image: url(../svg/dayicons/camping.svg);
+}
+ li::marker 
+{
+    font-size: 2.2rem;
     padding: 0;
     margin:0;
-}
+} 

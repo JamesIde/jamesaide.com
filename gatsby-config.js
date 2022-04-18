@@ -8,14 +8,17 @@ const contentfulConfig = {
 }
 module.exports = {
   siteMetadata: {
-    // siteUrl: "https://jamesaide.com",
+    siteUrl: "https://www.jamesaide.com",
     title: "James Ide",
+    titleTemplate: "James Ide | %s",
     description:
-      "James Ide's personal website displaying hiking trips, photo collections, work history and projects.",
+      "James Ide's personal website showcasing hiking trips, photo collections and work experience. ",
     headline: "James Ide's personal website",
     siteLanguage: "en",
     ogLanguage: "en_US",
     author: "James Ide",
+    twitter: "@james.ide",
+    facebook: "James Ide",
   },
   /* Your site config here */
   plugins: [
@@ -23,6 +26,13 @@ module.exports = {
     "gatsby-plugin-sharp",
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-image",
+    `gatsby-plugin-sass`,
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        extensions: [".mdx", ".md"],
+      },
+    },
     {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
@@ -38,18 +48,10 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        plugins: [
-          "gatsby-remark-relative-images",
-          {
-            resolve: "gatsby-remark-images",
-            options: {
-              // maxWidth: 750,
-              linkImagesToOriginal: false,
-            },
-          },
-        ],
+        trackingId: "NEED TO ADD",
+        head: true,
       },
     },
   ],

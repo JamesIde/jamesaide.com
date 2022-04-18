@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import Banner from "../components/Banner"
 import Card from "../components/Card"
+import SEO from "../components/SEO"
 import FeaturedCollection from "../components/FeaturedCollection"
 
 import { graphql, useStaticQuery } from "gatsby"
@@ -28,6 +29,7 @@ export default function Home() {
 
   return (
     <Layout>
+      <SEO title="Home" />
       <Banner />
       <div>
         <h1 className="text-center text-3xl mb-3 mt-3">LATEST RECORDS</h1>
