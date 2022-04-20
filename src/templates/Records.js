@@ -11,14 +11,15 @@ function Records({ data }) {
   return (
     <Layout>
       <SEO title={record.title} />
-      <div className="lg:w-[900px] sm:w-[600px] overflow-hidden mx-auto main-wrapper">
+      <div className="lg:w-[900px] sm:w-[600px] overflow-hidden mx-auto main-wrapper text-black">
         <GatsbyImage image={getImage(record.featuredImage)} />
         <section className="p-4">
-          <h1 className="text-xl text-center">{record.title}</h1>
-          <p>{record.description}</p>
+          <h1 className="text-xl text-center nav-center">{record.title}</h1>
+          <p className="text-center mb-2 font-mono">[{record.location}]</p>
+          <p className="">{record.description}</p>
           <p className="text-right">{record.date}</p>
-          <Table />
         </section>
+        <hr className="mb-5" />
         <MDXRenderer>{record.prefaceDescription.childMdx.body}</MDXRenderer>
         <MDXRenderer>{record.dayOneDescription.childMdx.body}</MDXRenderer>
         <div className="record-grid">
@@ -92,6 +93,7 @@ function Records({ data }) {
             }
           })}
         </div>
+        <MDXRenderer>{record.map.map}</MDXRenderer>
         <MDXRenderer>{record.travelDescription.childMdx.body}</MDXRenderer>
         <MDXRenderer>{record.aboutDescription.childMdx.body}</MDXRenderer>
       </div>
@@ -105,6 +107,7 @@ export const records = graphql`
       slug
       date
       description
+      location
       featuredImage {
         gatsbyImageData
       }
@@ -139,6 +142,11 @@ export const records = graphql`
       imageBlock3 {
         gatsbyImageData
         height
+      }
+      map {
+        childMdx {
+          body
+        }
       }
       gearDescription
       travelDescription {

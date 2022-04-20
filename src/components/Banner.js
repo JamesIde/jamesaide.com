@@ -1,7 +1,6 @@
 import React from "react"
-import background from "../images/mountain.jpg"
-import { graphql, useStaticQuery, Link } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { graphql, useStaticQuery } from "gatsby"
+import { getImage } from "gatsby-plugin-image"
 import { BgImage } from "gbimage-bridge"
 
 function Banner() {
@@ -26,7 +25,10 @@ function Banner() {
       <div>
         {banner.map(function (edge) {
           return (
-            <BgImage image={getImage(edge.node.Banner)} className="banner">
+            <BgImage
+              image={getImage(edge.node.Banner)}
+              className="h-full bg-center object-cover p-0 m-0"
+            >
               <div
                 className="flex justify-center items-center"
                 style={{ height: `76vh` }}

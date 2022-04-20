@@ -71,10 +71,22 @@ const SEO = ({ title, desc, banner }) => {
       <Helmet title={seo.title} titleTemplate={titleTemplate}>
         <html lang={siteLanguage} />
         <meta name="description" content={seo.description} />
-        <script
-          src="https://kit.fontawesome.com/394cbfddb8.js"
-          crossorigin="anonymous"
-        ></script>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap"
+          rel="stylesheet"
+        />
         <script type="application/ld+json">
           {JSON.stringify(schemaOrgWebPage)}
         </script>

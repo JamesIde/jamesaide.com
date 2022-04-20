@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Photo Collection Image Grid */
 .collection-grid {
     --gap-length: 1rem;
     --row-height: 240px;
@@ -51,66 +50,42 @@
     height: 100%;
 }
 
-
-/* Gatsby Background Image  */
-.banner {
-    height: 76vh;
-    background-position: 50% 50%;
-    object-fit: cover;
-    padding: 0;
-    margin: 0;
-}
-
 .bg-blurred {
     background-color: rgba(0, 0, 0, .75)
 }
+/* Styling is applied after MDX generates the html
+    Sadly tailwind classes do not support styling dynamically
+    generated content through MDX renderer, so this solves the problem..*/
 
-/* Headlines with lines */
-.decorated{
-    overflow: hidden;
-    text-align: center;
+.day-length{
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;    text-align: center;
 }
-.decorated > span{
-   position: relative;
-   display: inline-block;
-}
-
-.decorated > span:before, .decorated > span:after{
-   content: '';
-   position: absolute;
-   top: 50%;
-   border-bottom: 2px solid;
-   width: 60px; /* half of limiter*/
-   margin: 0 10px;
-}
-
-.decorated > span:before{
-   right: 100%;
-}
-
-.decorated > span:after{
-   left: 100%;
-}
-
-.day-icons{
-    margin: 5px;
-    padding-bottom: 10px;
-}
-
-
 .main-wrapper> p, h1{
-    /* padding-bottom: 15px; */
-    padding-left: 15px;
-    padding-right: 15px;
     padding-bottom: 10px;
-    color:white;
+    padding-left: 5px;
+    padding-right: 5px;
 }
-
-li{
-    padding-left: 15px;
-    padding-right: 15px; 
+.main-wrapper > p > a{
+    color: #007bff;
 }
-
+.main-wrapper > p > a:hover{
+    color: #007bff;
+    text-decoration: underline;
+}
+.main-wrapper > p {
+    color:black;
+    line-height: 1.8;
+}
+.main-wrapper > h1, .nav-center {
+    font-family: 'Playfair Display', serif;    
+    font-size: 2rem;
+    line-height: 1.2;
+    color:#343a40;
+    font-weight: 500;
+}
+.font-playfair{
+    font-family: 'Playfair Display', serif;    
+}
 li{
     line-height: 1em;
     list-style-position: unset;
@@ -118,19 +93,28 @@ li{
 
 .hiking{
     list-style-image: url(../svg/dayicons/hiking.svg);
+    font-family: 'Courier New', Courier, monospace;
+    color:black;
 }
 .distance{
     list-style-image: url(../svg/dayicons/distance.svg);
+    font-family: 'Courier New', Courier, monospace;
+    color:black;
 }
 .time{
     list-style-image: url(../svg/dayicons/time.svg);
+    font-family: 'Courier New', Courier, monospace;
+    color:black;
 }
 .camping{
     list-style-image: url(../svg/dayicons/camping.svg);
+    font-family: 'Courier New', Courier, monospace;
+    color:black;
 }
+
  li::marker 
 {
-    font-size: 2.2rem;
+    font-size: 3rem;
     padding: 0;
     margin:0;
 } 

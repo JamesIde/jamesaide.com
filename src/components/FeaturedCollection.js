@@ -10,9 +10,13 @@ export default function FeaturedCollection() {
           node {
             slug
             title
+            description {
+              description
+            }
             featuredImage {
               gatsbyImageData
             }
+            date(formatString: "MMMM Do, YYYY")
           }
         }
       }
@@ -21,25 +25,25 @@ export default function FeaturedCollection() {
 
   const featuredCollection = collections.allContentfulPhotoCollection
   return (
-    <div className="lg:w-4/5 sm:w-[600px] overflow-hidden mx-auto">
-      <div>
-        <h1 className="text-center text-3xl mt-3">LATEST PHOTO COLLECTIONS</h1>
-      </div>
-      <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-3">
-        {featuredCollection.edges.map(edge => {
-          return (
-            <Link to={`/collections/${edge.node.slug}`}>
-              <FeaturedCollectionThumbnail
-                slug={edge.node.slug}
-                title={edge.node.title}
-                image={edge.node.featuredImage}
-                description={edge.node.description}
-                date={edge.node.date}
-              />
-            </Link>
-          )
-        })}
-      </div>
-    </div>
+    <>
+      <h1 className="text-center text-3xl mb-1 mt-3 nav-center text-bold">
+        LATEST PHOTO COLLECTIONS
+      </h1>
+      <p className="font-mono text-center w-1/2 mx-auto">
+        [A collection of images, showcased and linked together. A combination of
+        leftover photos from records, or new photos I have taken]
+      </p>
+      {featuredCollection.edges.map(edge => {
+        return (
+          <FeaturedCollectionThumbnail
+            slug={edge.node.slug}
+            title={edge.node.title}
+            image={edge.node.featuredImage}
+            description={edge.node.description.description}
+            date={edge.node.date}
+          />
+        )
+      })}
+    </>
   )
 }

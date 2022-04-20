@@ -13,10 +13,9 @@ function Collections({ data }) {
       <SEO title={collection.title} />
       <div className="mx-auto w-4/5">
         <div className="text-center m-2 w-1/2 mx-auto">
-          {/* <h1 className="text-xl text-white decorated">
-            <span>{collection.title}</span>
-          </h1> */}
-          <h1 className="text-xl text-white ">{collection.title}</h1>
+          <h1 className="font-playfair text-bold text-2xl">
+            {collection.title}
+          </h1>
           <MDXRenderer>{collection.description.childMdx.body}</MDXRenderer>
         </div>
         <div className="container collection-grid">
@@ -46,8 +45,7 @@ function Collections({ data }) {
     </Layout>
   )
 }
-// 16/04
-// Whenever I add className in contentful, mdx breaks and doesnt show up in graphql. Will investigate, for no the queries are disabned
+
 export const collections = graphql`
   query ($slug: String!) {
     contentfulPhotoCollection(slug: { eq: $slug }) {
