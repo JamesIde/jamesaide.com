@@ -2,6 +2,9 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+// Config wouldn't work unless seperated like this
+// Thanks to Max Mitchell for this configuration and SEO layout 👍
+
 const contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
@@ -35,8 +38,7 @@ module.exports = {
     },
     {
       resolve: "gatsby-source-contentful",
-      spaceID: process.env.CONTENTFUL_SPACE_ID,
-      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      options: contentfulConfig,
     },
     {
       resolve: `gatsby-plugin-sass`,
