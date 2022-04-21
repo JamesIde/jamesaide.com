@@ -53,9 +53,12 @@
 .bg-blurred {
     background-color: rgba(0, 0, 0, .75)
 }
-/* Styling is applied after MDX generates the html
-    Sadly tailwind classes do not support styling dynamically
-    generated content through MDX renderer, so this solves the problem..*/
+
+/* 
+Styling is applied after MDX generates the html
+Sadly tailwind classes do not support styling dynamically
+generated content through MDX renderer, so this solves the problem..
+*/
 
 .day-length{
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;    text-align: center;
@@ -90,31 +93,3 @@ li{
     line-height: 1em;
     list-style-position: unset;
 }
-
-.hiking{
-    list-style-image: url(../svg/dayicons/hiking.svg);
-    font-family: 'Courier New', Courier, monospace;
-    color:black;
-}
-.distance{
-    list-style-image: url(../svg/dayicons/distance.svg);
-    font-family: 'Courier New', Courier, monospace;
-    color:black;
-}
-.time{
-    list-style-image: url(../svg/dayicons/time.svg);
-    font-family: 'Courier New', Courier, monospace;
-    color:black;
-}
-.camping{
-    list-style-image: url(../svg/dayicons/camping.svg);
-    font-family: 'Courier New', Courier, monospace;
-    color:black;
-}
-
- li::marker 
-{
-    font-size: 3rem;
-    padding: 0;
-    margin:0;
-} 

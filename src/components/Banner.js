@@ -12,7 +12,7 @@ function Banner() {
             title
             slug
             Banner {
-              gatsbyImageData(formats: WEBP)
+              gatsbyImageData(formats: WEBP, layout: CONSTRAINED, quality: 100)
             }
           }
         }
@@ -27,7 +27,7 @@ function Banner() {
           return (
             <BgImage
               image={getImage(edge.node.Banner)}
-              className="h-full bg-center object-cover p-0 m-0"
+              className=" object-contain p-0 m-0"
             >
               <div
                 className="flex justify-center items-center"

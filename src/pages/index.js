@@ -16,7 +16,7 @@ export default function Home() {
             location
             slug
             featuredImage {
-              gatsbyImageData(formats: WEBP, width: 900)
+              gatsbyImageData(formats: WEBP)
             }
             description
             date
@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <Layout>
       <SEO title="Home" />
-      <Banner />
+      {/* <Banner /> */}
       <div>
         <h1 className="text-center text-3xl mb-1 mt-4 nav-center text-bold">
           LATEST RECORDS
@@ -41,7 +41,7 @@ export default function Home() {
         </p>
 
         <div className="mx-auto lg:w-2/3 h-auto mt-5 mb-5">
-          <div class="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-3 ">
+          <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-3 ">
             {latestRecord.edges.map(edge => {
               return (
                 <Card

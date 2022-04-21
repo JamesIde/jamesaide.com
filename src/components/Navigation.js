@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 function Navigation({ title }) {
   return (
-    //bg-[#333]
     <div class="navbar  bg-white text-black">
       <div className="container mx-auto ">
         <div className="flex-1">
@@ -18,8 +17,9 @@ function Navigation({ title }) {
 
           <div className="flex justify-center mt-1 font-mono">
             <Link
-              to="/"
-              className="text-base   hover:text-sky-700 duration-500 lg:mr-3 md:mr-3 sm:mr-3 mr-3"
+              to="/About/"
+              className="text-base hover:text-sky-700 duration-500 lg:mr-3 md:mr-3 sm:mr-3 mr-3"
+              activeClassName="text-sky-700"
             >
               ABOUT
             </Link>

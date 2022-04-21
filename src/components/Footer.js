@@ -1,11 +1,10 @@
 import React from "react"
 import { SiGmail } from "react-icons/si"
 import { FaGithub, FaLinkedinIn } from "react-icons/fa"
-import { FiMail } from "react-icons/fi"
 function Footer() {
   return (
     <footer className="footer footer-center pt-5 pb-5 mt-3 border-t-[1px] border-slate-300">
-      <div className="grid grid-flow-col">
+      <div className="">
         <p className="lg:mr-[680px] md:mr-[450px] sm:mr-[200px]">
           James Ide &copy; 2022
         </p>

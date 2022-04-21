@@ -3,8 +3,6 @@ import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import SEO from "../components/SEO"
-import Table from "../components/Table"
-import Navigation from "../components/Navigation"
 import Layout from "../components/Layout"
 function Records({ data }) {
   const record = data.contentfulRecord
@@ -12,7 +10,10 @@ function Records({ data }) {
     <Layout>
       <SEO title={record.title} />
       <div className="lg:w-[900px] sm:w-[600px] overflow-hidden mx-auto main-wrapper text-black">
-        <GatsbyImage image={getImage(record.featuredImage)} />
+        <GatsbyImage
+          image={getImage(record.featuredImage)}
+          alt={record.title}
+        />
         <section className="p-4">
           <h1 className="text-xl text-center nav-center">{record.title}</h1>
           <p className="text-center mb-2 font-mono">[{record.location}]</p>
@@ -93,7 +94,7 @@ function Records({ data }) {
             }
           })}
         </div>
-        <MDXRenderer>{record.map.map}</MDXRenderer>
+        <MDXRenderer>{record.map.childMdx.body}</MDXRenderer>
         <MDXRenderer>{record.travelDescription.childMdx.body}</MDXRenderer>
         <MDXRenderer>{record.aboutDescription.childMdx.body}</MDXRenderer>
       </div>
