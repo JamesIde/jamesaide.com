@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import Banner from "../components/Banner"
 import Card from "../components/Card"
-import SEO from "../components/SEO"
+import Helmet from "../components/Helmet"
 import FeaturedCollection from "../components/FeaturedCollection"
 import { graphql, useStaticQuery } from "gatsby"
 
@@ -26,11 +26,10 @@ export default function Home() {
     }
   `)
   const latestRecord = records.allContentfulRecord
-
   return (
     <Layout>
-      <SEO title="Home" />
-      {/* <Banner /> */}
+      <Helmet title="Home" />
+      {/* <Banner hidden till fixed/> */}
       <div>
         <h1 className="text-center text-3xl mb-1 mt-4 nav-center text-bold">
           LATEST RECORDS

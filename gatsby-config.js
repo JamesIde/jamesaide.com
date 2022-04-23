@@ -57,5 +57,42 @@ module.exports = {
         head: true,
       },
     },
+    {
+      resolve: `gatsby-source-github-api`,
+      options: {  
+
+        token: process.env.GITHUB_API_TOKEN,
+  
+        graphQLQuery: `
+        query($username: String!){
+          user(login: $username) {
+                pinnedItems(first: 6, types: REPOSITORY) {
+              nodes {
+                ... on Repository {
+                  name
+                  description
+                  url
+                  repositoryTopics(first:4) {
+                    edges {
+                      node {
+                        topic {
+                          name
+                        }
+                      }
+                    }
+                  }
+                  createdAt
+                    }
+                  }
+                }
+              }
+        }
+        `,
+  
+        variables: {
+          username:"JamesIde"
+        }
+      }
+    }
   ],
 }

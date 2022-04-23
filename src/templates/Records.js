@@ -2,14 +2,14 @@ import React, { useState } from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import SEO from "../components/SEO"
+import Helmet from "../components/Helmet"
 import Layout from "../components/Layout"
 function Records({ data }) {
   const record = data.contentfulRecord
   return (
     <Layout>
-      <SEO title={record.title} />
-      <div className="lg:w-[900px] sm:w-[600px] overflow-hidden mx-auto main-wrapper text-black">
+      <Helmet title={record.title} />
+      <div className="lg:w-[900px] sm:w-[600px] overflow-hidden mx-auto main-wrapper text-black mt-2">
         <GatsbyImage
           image={getImage(record.featuredImage)}
           alt={record.title}
@@ -22,7 +22,32 @@ function Records({ data }) {
         </section>
         <hr className="mb-5" />
         <MDXRenderer>{record.prefaceDescription.childMdx.body}</MDXRenderer>
+        <MDXRenderer>{record.dayFourDescription.childMdx.body}</MDXRenderer>
         <MDXRenderer>{record.dayOneDescription.childMdx.body}</MDXRenderer>
+        {/* <div className="record-grid">
+          {record.imageBlock4 &&
+            record.imageBlock4.map(function (photo) {
+              if (photo.height >= 4000) {
+                return (
+                  <>
+                    <GatsbyImage
+                      image={getImage(photo.gatsbyImageData)}
+                      className="record-img-span2 hover:border-blue-500 hover:cursor-pointer duration-500"
+                    />
+                  </>
+                )
+              } else {
+                return (
+                  <>
+                    <GatsbyImage
+                      image={getImage(photo.gatsbyImageData)}
+                      className="record-img hover:border-blue-500 hover:cursor-pointer duration-500"
+                    />
+                  </>
+                )
+              }
+            })}
+        </div> */}
         <div className="record-grid">
           {record.imageBlock1.map(function (photo) {
             if (photo.height >= 4000) {
@@ -159,6 +184,15 @@ export const records = graphql`
         childMdx {
           body
         }
+      }
+      dayFourDescription {
+        childMdx {
+          body
+        }
+      }
+      imageBlock4 {
+        gatsbyImageData
+        height
       }
     }
   }

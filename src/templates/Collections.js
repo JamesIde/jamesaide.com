@@ -1,16 +1,15 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import SEO from "../components/SEO"
+import Helmet from "../components/Helmet"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Navigation from "../components/Navigation"
 import Layout from "../components/Layout"
 function Collections({ data }) {
   const collection = data.contentfulPhotoCollection
-
   return (
     <Layout>
-      <SEO title={collection.title} />
+      <Helmet title={collection.title} />
       <div className="mx-auto w-4/5">
         <div className="text-center m-2 w-1/2 mx-auto">
           <h1 className="font-playfair text-bold text-2xl">
