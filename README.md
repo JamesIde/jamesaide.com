@@ -7,7 +7,7 @@ The front end was created with [Gatsbyjs](https://www.gatsbyjs.com/), and styled
 ## Resources I Used
 
 - Harmen Hoek's [travel itinerary](https://harmenhoek.com/) for inspiration to create, design and document my adventures.
-- Jamie Barnes [website](https://www.jamiebarnesoutdoors.co.uk/) for further design inspiration.
+- Jamie Barnes' [website](https://www.jamiebarnesoutdoors.co.uk/) for further design inspiration.
 - Max Mitchell's [video](https://www.youtube.com/watch?v=m6vxzu95sOI) on building his website with Gatsby and using Contentful. This was my first exposure to the world of content management systems in a well-layed out video with a tangible result at the end.
 
 ## Future Development
