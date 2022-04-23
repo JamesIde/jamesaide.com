@@ -1,8 +1,8 @@
 ## Personal Website
 
-My personal website. A place to display my hiking trips, photos, work experience and projects. View it [here](https://jamesaide.com)
+My personal website. A place to display my hiking trips, photos, work experience and projects. 
 
-The front end was created with [Gatsbyjs](https://www.gatsbyjs.com/), and styled with [TailwindCSS](https://tailwindcss.com/). All images and text are stored on Contentful and the site is hosted on [Netlify](https://www.netlify.com/). The text provided by Contentful is rendered into normal html using [MDX](https://clubmate.fi/mdx-in-gatsby), which is like Markdown, but renders jsx components and styling. This allows me to style dynamically generated HTML and bypass any TailwindCSS constraints.
+The front end was created with [Gatsbyjs](https://www.gatsbyjs.com/), and styled with [TailwindCSS](https://tailwindcss.com/). All images and text are stored on Contentful and the site is hosted on [Netlify](https://www.netlify.com/). The text provided by Contentful is rendered into normal html using [MDX](https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/), which is like Markdown, but renders jsx components and styling. This allows me to style dynamically generated HTML and bypass any TailwindCSS constraints.
 
 ## Resources I Used
 
