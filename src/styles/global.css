@@ -89,7 +89,12 @@ generated content through MDX renderer, so this solves the problem..
     padding-right: 12px;
 }
 
-.main-wrapper>  h1, p{
+.main-wrapper > p{
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.main-wrapper > h1{
     padding-bottom: 10px;
     padding-left: 15px;
     padding-right: 15px;
