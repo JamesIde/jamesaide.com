@@ -6,8 +6,8 @@ require("dotenv").config({
 // Thanks to Max Mitchell for this configuration and SEO layout 👍
 
 const contentfulConfig = {
-  spaceId: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN,
 }
 
 module.exports = {
@@ -54,7 +54,7 @@ module.exports = {
     {
       resolve: `gatsby-source-github-api`,
       options: {
-        token: process.env.GITHUB_API_TOKEN,
+        token: process.env.GATSBY_GITHUB_API_TOKEN,
 
         graphQLQuery: `
         query($username: String!){

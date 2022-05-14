@@ -24,7 +24,7 @@
         margin: 10px 0;
     }
     }
-    
+
 .collection-img {
     object-fit: cover;
     width: 100%;
@@ -89,7 +89,7 @@ generated content through MDX renderer, so this solves the problem..
     padding-right: 12px;
 }
 
-.main-wrapper>  h1{
+.main-wrapper>  h1, p{
     padding-bottom: 10px;
     padding-left: 15px;
     padding-right: 15px;
