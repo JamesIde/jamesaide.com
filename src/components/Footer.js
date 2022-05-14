@@ -6,10 +6,7 @@ function Footer() {
 
   return (
     <footer className="footer footer-center pt-5 pb-5 mt-3 border-t-[1px] border-slate-300 bg-slate-100">
-      <div className="flex mx-auto justify-center">
-        <p className="lg:mr-[680px] md:mr-[450px] mr-[200px]">
-          James Ide &copy; {footerYear}
-        </p>
+      <div className="flex justify-center ">
         <a href="https://github.com/JamesIde" target="#" className="">
           <FaGithub
             size="1.2rem"
@@ -28,6 +25,9 @@ function Footer() {
             className="text-[#222] hover:text-gray-500 duration-500 cursor-pointer mr-1 ml-1"
           />
         </a>
+      </div>
+      <div className="flex justify-center mt-2">
+        <p className="">James Ide &copy; {footerYear}</p>
       </div>
     </footer>
   )

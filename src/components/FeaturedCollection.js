@@ -30,8 +30,7 @@ export default function FeaturedCollection() {
         LATEST PHOTO COLLECTIONS
       </h1>
       <p className="font-mono text-center w-1/2 mx-auto">
-        [A collection of images, showcased and linked together. A combination of
-        leftover photos from records, or new photos I have taken]
+        [Miscellaneous photos]
       </p>
       {featuredCollection.edges.map(edge => {
         return (

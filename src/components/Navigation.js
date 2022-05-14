@@ -1,9 +1,10 @@
 import React from "react"
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
+import { Link } from "gatsby"
+import { HiExternalLink } from "react-icons/hi"
 function Navigation({ title }) {
   return (
-    <div class="navbar  bg-white text-black">
+    <div className="navbar text-black mb-2">
       <div className="container mx-auto ">
         <div className="flex-1">
           <div className="flex-none text-center nav-center mb-2">
@@ -23,14 +24,20 @@ function Navigation({ title }) {
             >
               ABOUT
             </Link>
-            <Link
+            {/* <Link
               to="/"
               className="text-base hover:text-sky-700 duration-500 lg:mr-3 md:mr-3 sm:mr-3 mr-3"
             >
               CONTACT
-            </Link>
-            {/* Instagram Icon */}
-            {/* MailTo with icon */}
+            </Link> */}
+            <a
+              href="mailto:james.ide775@gmail.com"
+              target="_#"
+              className="text-base hover:text-sky-700 duration-500 lg:mr-3 md:mr-3 sm:mr-3 mr-3 p-0"
+            >
+              CONTACT
+              <HiExternalLink size="0.7rem" className="inline-block" />
+            </a>
           </div>
         </div>
       </div>

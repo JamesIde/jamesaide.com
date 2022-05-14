@@ -2,6 +2,7 @@ import React from "react"
 import Helmet from "../components/Helmet"
 import Layout from "../components/Layout"
 import Table from "../components/Table"
+import { Link } from "gatsby"
 function About() {
   return (
     <Layout>
@@ -11,7 +12,7 @@ function About() {
       <div className="w-4/5 mx-auto mt-5">
         <div className="grid lg:grid-cols-2 h-screen">
           <div className="grid-span-1">
-            <div className="ml-auto lg:pl-4 lg:w-4/5">
+            <div className="ml-auto lg:pl-4 lg:w-4/5 ">
               <p className="font-playfair text-3xl">About</p>
               <p className="mt-5">
                 My name is <i className="font-playfair">James</i> and I'm a
@@ -34,14 +35,15 @@ function About() {
               </p>
             </div>
           </div>
-          <div className="grid-span-1">
+          <div className="grid-span-1 mb-10">
             <div>
               <h1 className="font-playfair text-3xl pl-0 inline-block">
-                Latest Projects
+                Some projects
               </h1>
-              <em className="inline-block text-[10px]">last updated</em>
             </div>
-            <Table />
+            <div>
+              <Table />
+            </div>
           </div>
         </div>
       </div>
@@ -49,4 +51,3 @@ function About() {
   )
 }
 export default About
-// Github repos on other side

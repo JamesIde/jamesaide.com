@@ -9,6 +9,7 @@ const contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 }
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.jamesaide.com",
@@ -51,18 +52,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "NEED TO ADD",
-        head: true,
-      },
-    },
-    {
       resolve: `gatsby-source-github-api`,
-      options: {  
-
+      options: {
         token: process.env.GITHUB_API_TOKEN,
-  
+
         graphQLQuery: `
         query($username: String!){
           user(login: $username) {
@@ -88,11 +81,26 @@ module.exports = {
               }
         }
         `,
-  
         variables: {
-          username:"JamesIde"
-        }
-      }
-    }
+          username: "JamesIde",
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-GHS0468GG6", // Google Analytics / GA
+        ],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-purgecss",
+      options: {
+        printRejected: true,
+        develop: false,
+        tailwind: true,
+      },
+    },
   ],
 }

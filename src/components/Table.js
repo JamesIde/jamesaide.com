@@ -33,11 +33,11 @@ function Table() {
   const info = github.githubData.data.user.pinnedItems.nodes
 
   return (
-    <>
-      {info.slice(0, 4).map(function (item) {
+    <div>
+      {info.slice(0, 3).map(function (item) {
         return (
           <Link to={item.url} target="#">
-            <div className=" mt-2 mb-2   hover:border-[1px] overflow-hidden">
+            <div className=" mt-2 mb-2 hover:border-[1px]">
               <div className="pl-1">
                 <h5 className="text-lg pl-0 mb-1 font-semibold">{item.name}</h5>
                 <p className="mb-1 pr-1">{item.description}</p>
@@ -55,7 +55,7 @@ function Table() {
           </Link>
         )
       })}
-    </>
+    </div>
   )
 
   // <>

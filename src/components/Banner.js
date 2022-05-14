@@ -11,8 +11,9 @@ function Banner() {
           node {
             title
             slug
+            id
             Banner {
-              gatsbyImageData(formats: WEBP, layout: CONSTRAINED, quality: 100)
+              gatsbyImageData(formats: JPG, layout: CONSTRAINED, quality: 75)
             }
           }
         }
@@ -25,17 +26,23 @@ function Banner() {
       <div>
         {banner.map(function (edge) {
           return (
+            // Swiper component with background URL as this
+            // Rather than BG image (?)
             <BgImage
               image={getImage(edge.node.Banner)}
-              className=" object-contain p-0 m-0"
+              className="object-contain p-0 m-0"
             >
               <div
                 className="flex justify-center items-center"
-                style={{ height: `76vh` }}
+                style={{ height: `83vh` }}
               >
                 <div className="text-center">
                   <h1 className="text-3xl text-white">{edge.node.title}</h1>
-                  <p className="text-1xl text-white">SEE MORE</p>
+                  {/* TODO STYLING */}
+                  <p className="text-1xl text-white">
+                    SEE MORE
+                    {/* TODO: BUTTON LINK TO SLUG */}
+                  </p>
                 </div>
               </div>
             </BgImage>
