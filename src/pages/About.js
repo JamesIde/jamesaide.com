@@ -2,7 +2,6 @@ import React from "react"
 import Helmet from "../components/Helmet"
 import Layout from "../components/Layout"
 import Table from "../components/Table"
-import { Link } from "gatsby"
 function About() {
   return (
     <Layout>

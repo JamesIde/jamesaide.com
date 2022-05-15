@@ -137,7 +137,7 @@ function Records({ data }) {
         </div>
 
         <MDXRenderer>{record.dayFourDescription.childMdx.body}</MDXRenderer>
-        <div className="record-grid">
+        {/* <div className="record-grid">
           {record.imageBlock4 &&
             record.imageBlock4.map(function (photo) {
               if (photo.height >= 4000) {
@@ -164,7 +164,7 @@ function Records({ data }) {
                 )
               }
             })}
-        </div>
+        </div> */}
         <MDXRenderer>{record.map.childMdx.body}</MDXRenderer>
         <MDXRenderer>{record.travelDescription.childMdx.body}</MDXRenderer>
         <MDXRenderer>{record.aboutDescription.childMdx.body}</MDXRenderer>
