@@ -40,7 +40,7 @@ function About() {
                 Some projects
               </h1>
             </div>
-            <div>
+            <div className="mb-[50px]">
               <Table />
             </div>
           </div>

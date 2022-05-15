@@ -13,6 +13,7 @@ function Card({ slug, title, location, image, date, description }) {
             alt={title}
             image={getImage(image)}
             loading="lazy"
+            placeholder="blurred"
             className="md:h-[450px] "
           />
         </Link>

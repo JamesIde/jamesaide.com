@@ -1,7 +1,5 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import ReactTable from "react-table"
 import { Link } from "gatsby"
 function Table() {
   const github = useStaticQuery(graphql`
@@ -34,10 +32,10 @@ function Table() {
 
   return (
     <div>
-      {info.slice(0, 3).map(function (item) {
+      {info.slice(1, 4).map(function (item) {
         return (
           <Link to={item.url} target="#">
-            <div className="mt-2 mb-2 hover:border-[1px]pl-0">
+            <div className="mt-2 mb-2 hover:border-[1px] pl-0">
               <div className="pl-1">
                 <h5 className="text-lg pl-0 mb-1 pr-1 font-semibold">
                   {item.name}

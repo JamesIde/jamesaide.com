@@ -9,6 +9,7 @@
     --row-height: 240px;
     --column-width: 300px;
 }
+
 .collection-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(var(--column-width), 1fr));
@@ -41,6 +42,7 @@
     --row-height: 200px;
     --column-width: 220px;
 }
+
 .record-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(var(--column-width), 1fr));
@@ -81,18 +83,15 @@ generated content through MDX renderer, so this solves the problem..
 */
 
 .day-length{
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;    text-align: center;
-}
-
-#wrapper p {
-    padding-left: 12px;
-    padding-right: 12px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .main-wrapper > p{
     padding-bottom: 10px;
     padding-left: 15px;
     padding-right: 15px;
+    color:black;
+    line-height: 1.8;
 }
 .main-wrapper > h1{
     padding-bottom: 10px;
@@ -106,10 +105,7 @@ generated content through MDX renderer, so this solves the problem..
     color: #007bff;
     text-decoration: underline;
 }
-.main-wrapper > p {
-    color:black;
-    line-height: 1.8;
-}
+
 .main-wrapper > h1, .nav-center {
     font-family: 'Playfair Display', serif;    
     font-size: 2rem;
