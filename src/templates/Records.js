@@ -12,7 +12,7 @@ function Records({ data }) {
   const [currImage, setImage] = useState()
   const imageModal = (e, photo) => {
     e.stopPropagation()
-    setModal(true)
+    setModal(showModal => !showModal)
     setImage(photo)
   }
   const closeModal = () => {
@@ -24,12 +24,10 @@ function Records({ data }) {
       <div
         className="lg:w-[900px] sm:w-[600px] overflow-hidden mx-auto main-wrapper text-black mt-2"
         onClick={closeModal}
-        id="wrapper"
       >
         <GatsbyImage
           image={getImage(record.featuredImage)}
           alt={record.title}
-          className=""
         />
         <section className="p-4">
           <h1 className="text-xl text-center nav-center">{record.title}</h1>
@@ -52,6 +50,8 @@ function Records({ data }) {
                         className="record-img-span2 hover:border-blue-500 hover:cursor-pointer duration-500"
                         alt={records.title}
                         onClick={e => imageModal(e, photo)}
+                        loading="lazy"
+                        placeholder="blurred"
                       />
                     </>
                   )
@@ -63,6 +63,8 @@ function Records({ data }) {
                         className="record-img hover:border-blue-500 hover:cursor-pointer duration-500"
                         alt={records.title}
                         onClick={e => imageModal(e, photo)}
+                        loading="lazy"
+                        placeholder="blurred"
                       />
                     </>
                   )
@@ -85,6 +87,8 @@ function Records({ data }) {
                           className="record-img-span2 hover:border-blue-500 hover:cursor-pointer duration-500"
                           alt={records.title}
                           onClick={e => imageModal(e, photo)}
+                          loading="lazy"
+                          placeholder="blurred"
                         />
                       </>
                     )
@@ -96,6 +100,8 @@ function Records({ data }) {
                           className="record-img hover:border-blue-500 hover:cursor-pointer duration-500"
                           alt={records.title}
                           onClick={e => imageModal(e, photo)}
+                          loading="lazy"
+                          placeholder="blurred"
                         />
                       </>
                     )
@@ -117,6 +123,8 @@ function Records({ data }) {
                         className="record-img-span2 hover:border-blue-500 hover:cursor-pointer duration-500"
                         alt={records.title}
                         onClick={e => imageModal(e, photo)}
+                        loading="lazy"
+                        placeholder="blurred"
                       />
                     </>
                   )
@@ -128,6 +136,8 @@ function Records({ data }) {
                         className="record-img hover:border-blue-500 hover:cursor-pointer duration-500"
                         alt={records.title}
                         onClick={e => imageModal(e, photo)}
+                        loading="lazy"
+                        placeholder="blurred"
                       />
                     </>
                   )
@@ -135,7 +145,6 @@ function Records({ data }) {
               })}
           </div>
         </div>
-
         <MDXRenderer>{record.dayFourDescription.childMdx.body}</MDXRenderer>
         {/* <div className="record-grid">
           {record.imageBlock4 &&
