@@ -31,6 +31,16 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-image",
     `gatsby-plugin-sass`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.jamesaide.com",
+        sitemap: "https://www.jamesaide.com/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
     {
       resolve: "gatsby-plugin-mdx",
       options: {

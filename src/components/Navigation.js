@@ -18,7 +18,7 @@ function Navigation({ title }) {
 
           <div className="flex justify-center mt-1 font-mono">
             <Link
-              to="/About"
+              to="/about"
               className="text-base hover:text-sky-700 duration-500 lg:mr-3 md:mr-3 sm:mr-3 mr-3"
               activeClassName="text-sky-700"
             >
