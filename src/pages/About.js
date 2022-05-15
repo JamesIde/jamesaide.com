@@ -2,7 +2,7 @@ import React from "react"
 import Helmet from "../components/Helmet"
 import Layout from "../components/Layout"
 import Table from "../components/Table"
-function about() {
+function About() {
   return (
     <Layout>
       <div>
@@ -49,4 +49,5 @@ function about() {
     </Layout>
   )
 }
-export default about
+
+export default About
