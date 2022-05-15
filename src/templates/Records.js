@@ -34,7 +34,7 @@ function Records({ data }) {
         <section className="p-4">
           <h1 className="text-xl text-center nav-center">{record.title}</h1>
           <p className="text-center mb-2 mt-2 font-mono">[{record.location}]</p>
-          <p className="  ">{record.description}</p>
+          <p>{record.description}</p>
           <p className="text-right">{record.date}</p>
           <hr className="mb-2 mt-2" />
         </section>
