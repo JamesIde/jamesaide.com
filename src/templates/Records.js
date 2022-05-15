@@ -250,10 +250,6 @@ export const records = graphql`
           body
         }
       }
-      imageBlock4 {
-        gatsbyImageData
-        height
-      }
     }
   }
 `
