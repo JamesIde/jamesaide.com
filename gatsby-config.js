@@ -37,7 +37,7 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://www.jamesaide.com",
-        sitemap: "https://www.jamesaide.com/sitemap.xml",
+        sitemap: "https://jamesaide.com/sitemap/sitemap-0.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
