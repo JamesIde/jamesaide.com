@@ -90,7 +90,13 @@ const SEO = ({ title, desc, banner }) => {
         <script type="application/ld+json">
           {JSON.stringify(schemaOrgWebPage)}
         </script>
-
+        <script
+          src="https://cdn.lr-in-prod.com/LogRocket.min.js"
+          crossorigin="anonymous"
+        ></script>
+        <script>
+          window.LogRocket && window.LogRocket.init('james/my-website');
+        </script>
         <meta property="og:site_name" content={facebook} />
         <meta property="og:locale" content={ogLanguage} />
         <meta property="og:url" content={seo.url} />
