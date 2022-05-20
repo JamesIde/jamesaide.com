@@ -5,7 +5,7 @@ function Footer() {
   const footerYear = new Date().getFullYear()
 
   return (
-    <footer className="footer footer-center pt-5 mt-3 pb-[20px] border-t-[1px] border-slate-300 bg-slate-100">
+    <footer className="footer footer-center pt-5 mt-16 lg:mt-4 md:mt-4 xl:mt-4 pb-[20px] border-t-[1px] border-slate-300 bg-slate-100">
       <div className="flex justify-center ">
         <a href="https://github.com/JamesIde" target="#" className="">
           <FaGithub
