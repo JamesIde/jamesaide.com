@@ -97,6 +97,7 @@ const SEO = ({ title, desc, banner }) => {
         <script>
           window.LogRocket && window.LogRocket.init('james/my-website');
         </script>
+        <script src="https://lighterpack.com/e/wwar9x"></script>
         <meta property="og:site_name" content={facebook} />
         <meta property="og:locale" content={ogLanguage} />
         <meta property="og:url" content={seo.url} />

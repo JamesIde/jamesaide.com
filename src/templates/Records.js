@@ -1,11 +1,11 @@
 import React from "react"
-import Helmet from "../components/Helmet"
-import Layout from "../components/Layout"
+import Helmet from "../components/navigation&seo/Helmet"
+import Layout from "../components/navigation&seo/Layout"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { useState } from "react"
-import { Link } from "gatsby"
+import ReturnToHome from "../components/misc/ReturnToHome"
 function Records({ data }) {
   const record = data.contentfulRecord
   const [modal, setModal] = useState(false)
@@ -50,8 +50,6 @@ function Records({ data }) {
                         className="record-img-span2 hover:border-blue-500 hover:cursor-pointer duration-500"
                         alt={records.title}
                         onClick={e => imageModal(e, photo)}
-                        loading="lazy"
-                        placeholder="blurred"
                       />
                     </>
                   )
@@ -175,11 +173,10 @@ function Records({ data }) {
             })}
         </div> */}
         <MDXRenderer>{record.map.childMdx.body}</MDXRenderer>
+        <br />
         <MDXRenderer>{record.travelDescription.childMdx.body}</MDXRenderer>
         <MDXRenderer>{record.aboutDescription.childMdx.body}</MDXRenderer>
-        <Link to="/" className="hover:text-sky-700 duration-500">
-          <p className="text-center font-mono">[Return to home]</p>
-        </Link>
+        <ReturnToHome />
         {modal && (
           <div className="fixed flex justify-center items-center h-screen w-full top-0 left-0 bg-blurred">
             <GatsbyImage
