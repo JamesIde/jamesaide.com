@@ -1,7 +1,7 @@
 import React from "react"
-import Helmet from "../components/Helmet"
-import Layout from "../components/Layout"
-import Table from "../components/Table"
+import Helmet from "../components/navigation&seo/Helmet"
+import Layout from "../components/navigation&seo/Layout"
+import Table from "../components/misc/Table"
 function About() {
   return (
     <Layout>
