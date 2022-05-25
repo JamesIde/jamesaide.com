@@ -1,18 +1,18 @@
 import React, { useState } from "react"
-import Helmet from "../components/navigation&seo/Helmet"
-import Layout from "../components/navigation&seo/Layout"
+import Helmet from "../components/Helmet"
+import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 function Collections({ data }) {
   const collection = data.contentfulPhotoCollection
-
   const [modal, setModal] = useState(false)
   const [currImage, setImage] = useState()
-  const imageModal = () => {
-    // setModal(showModal => !showModal)
-    // setImage(photo)
-    console.log("hello")
+
+  const imageModal = (e, photo) => {
+    e.stopPropagation()
+    setModal(true)
+    setImage(photo)
   }
   const closeModal = () => {
     setModal(false)
@@ -22,12 +22,11 @@ function Collections({ data }) {
     <Layout>
       <Helmet title={collection.title} />
       <div className="mx-auto" onClick={closeModal}>
-        <div className="m-2 md:w-2/4 mx-auto pl-4 pr-4 ">
-          <h5 className="font-playfair text-bold text-[20px] mb-4 mt-4">
+        <div className="text-center m-2 md:w-1/2 mx-auto pl-4 pr-4">
+          <h1 className="font-playfair text-bold text-2xl">
             {collection.title}
-          </h5>
+          </h1>
           <MDXRenderer>{collection.description.childMdx.body}</MDXRenderer>
-          <p className="mt-3 mb-4 text-gray-400">{collection.date}</p>
         </div>
         <div className="collection-grid-container">
           <div className="collection-grid pl-4 pr-4">
@@ -37,9 +36,8 @@ function Collections({ data }) {
                   <>
                     <GatsbyImage
                       image={getImage(photo.gatsbyImageData)}
-                      className="border-2 collection-img-span2 hover:border-blue-500 hover:cursor-pointer duration-500"
-                      alt={photo.id}
-                      onClick={imageModal}
+                      className="collection-img-span2 border-2 hover:border-blue-500 hover:cursor-pointer duration-500"
+                      onClick={e => imageModal(e, photo)}
                     />
                   </>
                 )
@@ -48,8 +46,7 @@ function Collections({ data }) {
                   <>
                     <GatsbyImage
                       image={getImage(photo.gatsbyImageData)}
-                      alt={photo.id}
-                      className="border-2 collection-img hover:border-blue-500 hover:cursor-pointer duration-500"
+                      className="collection-img border-2 hover:border-blue-500 hover:cursor-pointer duration-500"
                       onClick={e => imageModal(e, photo)}
                     />
                   </>
@@ -79,16 +76,15 @@ export const collections = graphql`
     contentfulPhotoCollection(slug: { eq: $slug }) {
       title
       slug
-      date(formatString: "MMMM DD, YYYY")
+      date
       description {
         childMdx {
           body
         }
       }
       photos {
-        gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+        gatsbyImageData
         height
-        id
       }
     }
   }

@@ -51,27 +51,4 @@ module.exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
-
-  //Generate Entries
-  const entries = path.resolve("./src/templates/Entries.js")
-  const genEntry = await graphql(`
-    query MyQuery {
-      allContentfulEntries {
-        edges {
-          node {
-            slug
-          }
-        }
-      }
-    }
-  `)
-  genEntry.data.allContentfulEntries.edges.forEach(edge => {
-    createPage({
-      component: entries,
-      path: `/entries/${edge.node.slug}`,
-      context: {
-        slug: edge.node.slug,
-      },
-    })
-  })
 }

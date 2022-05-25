@@ -124,24 +124,3 @@ li{
     line-height: 1em;
     list-style-position: unset;
 }
-
-
-/* GEAR */
-
-#wwar9x .lpCategoryName {
-    font-family: 'Playfair Display', serif !important;    
-    font-size: 2rem;
-    line-height: 1.2;
-    color:#343a40;
-    font-weight: 500;
-    padding-top: 25px;
-}
-
-#wwar9x .lpListName {
-    font-family: 'Playfair Display', serif !important;    
-    font-size: 2rem;
-    line-height: 1.2;
-    color:#343a40;
-    font-weight: 500;
-    padding-top: 25px;
-}

@@ -24,13 +24,6 @@ function Navigation({ title }) {
             >
               ABOUT
             </Link>
-            <Link
-              to="/gear"
-              className="text-base hover:text-sky-700 duration-500 lg:mr-3 md:mr-3 sm:mr-3 mr-3"
-              activeClassName="text-sky-700"
-            >
-              GEAR
-            </Link>
             {/* <Link
               to="/"
               className="text-base hover:text-sky-700 duration-500 lg:mr-3 md:mr-3 sm:mr-3 mr-3"
