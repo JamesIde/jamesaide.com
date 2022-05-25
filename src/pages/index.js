@@ -10,8 +10,8 @@ export default function Home() {
     <Layout>
       <Helmet title="Home" />
       {/* <Banner /> */}
-      {/* <FeaturedRecords /> */}
-      <FeaturedEntries />
+      <FeaturedRecords />
+      {/* <FeaturedEntries /> */}
       {/* <FeaturedCollection /> */}
     </Layout>
   )
