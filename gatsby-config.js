@@ -21,7 +21,7 @@ module.exports = {
     siteLanguage: "en",
     ogLanguage: "en_US",
     author: "James Ide",
-    twitter: "@james.ide",
+    twitter: "1macros",
     facebook: "James Ide",
   },
   /* Your site config here */

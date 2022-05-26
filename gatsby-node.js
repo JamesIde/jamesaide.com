@@ -4,7 +4,6 @@ module.exports.createPages = async ({ graphql, actions }) => {
 
   //Generate collections
   const collections = path.resolve("./src/templates/Collections.js")
-
   const genCollection = await graphql(`
     query {
       allContentfulPhotoCollection {
@@ -16,7 +15,6 @@ module.exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-
   genCollection.data.allContentfulPhotoCollection.edges.forEach(edge => {
     createPage({
       component: collections,
@@ -41,7 +39,6 @@ module.exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-
   genRecord.data.allContentfulRecord.edges.forEach(edge => {
     createPage({
       component: records,

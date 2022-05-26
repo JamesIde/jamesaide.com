@@ -4,6 +4,9 @@ import Layout from "../components/navigation&seo/Layout"
 import ReturnToHome from "../components/misc/ReturnToHome"
 import { Link } from "gatsby"
 function gear() {
+  const refresh = () => {
+    window.location.reload()
+  }
   return (
     <Layout>
       <Helmet title="Gear" />
@@ -11,8 +14,8 @@ function gear() {
         <div className="mx-auto ml-5 mr-5">
           <div id="wwar9x"></div>
           <a
-            href="https://lighterpack.com/r/wwar9x"
-            className="hover:text-sky-700 duration-500 italic"
+            onClick={refresh}
+            className="hover:text-sky-700 duration-500 italic cursor-pointer"
           >
             Not loaded? Click here
           </a>
