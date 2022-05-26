@@ -51,9 +51,6 @@ module.exports = {
       options: contentfulConfig,
     },
     {
-      resolve: `gatsby-plugin-sass`,
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
