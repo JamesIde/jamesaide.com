@@ -1,8 +1,9 @@
-/* Where css that doesn't work, works... */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Where css that doesn't work, works... */
 
 .collection-grid-container{
     --gap-length: 1rem;
