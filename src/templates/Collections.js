@@ -7,21 +7,23 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 function Collections({ data }) {
   const collection = data.contentfulPhotoCollection
 
-  const [modal, setModal] = useState(false)
-  const [currImage, setImage] = useState()
-  const imageModal = () => {
-    // setModal(showModal => !showModal)
-    // setImage(photo)
-    console.log("hello")
+  const [showModal, setShowModal] = useState(false)
+  const [currentImage, setCurrentImage] = useState()
+
+  const handleClick = (e, photo) => {
+    e.stopPropagation()
+    setShowModal(showModal => !showModal)
+    setCurrentImage(photo)
   }
-  const closeModal = () => {
-    setModal(false)
+
+  const handleClose = () => {
+    setShowModal(false)
   }
 
   return (
     <Layout>
       <Helmet title={collection.title} />
-      <div className="mx-auto" onClick={closeModal}>
+      <div className="mx-auto" onClick={handleClose}>
         <div className="m-2 md:w-2/4 mx-auto pl-4 pr-4 ">
           <h5 className="font-playfair text-bold text-[20px] mb-4 mt-4">
             {collection.title}
@@ -34,37 +36,36 @@ function Collections({ data }) {
             {collection.photos.map(function (photo) {
               if (photo.height >= 4000) {
                 return (
-                  <>
+                  <div className="collection-img-span2" onClick={e => handleClick(e, photo)}>
                     <GatsbyImage
                       image={getImage(photo.gatsbyImageData)}
                       className="border-2 collection-img-span2 hover:border-blue-500 hover:cursor-pointer duration-500"
                       alt={photo.id}
-                      onClick={imageModal}
                     />
-                  </>
+                  </div>
                 )
               } else {
                 return (
-                  <>
+                  <div className="collection-img" onClick={e => handleClick(e, photo)}>
                     <GatsbyImage
                       image={getImage(photo.gatsbyImageData)}
                       alt={photo.id}
                       className="border-2 collection-img hover:border-blue-500 hover:cursor-pointer duration-500"
-                      onClick={e => imageModal(e, photo)}
+                      
                     />
-                  </>
+                  </div>
                 )
               }
             })}
           </div>
         </div>
-        {modal && (
+        {showModal && (
           <div className="fixed flex justify-center items-center h-screen w-full top-0 left-0 bg-blurred">
             <GatsbyImage
-              image={currImage.gatsbyImageData}
+              image={currentImage.gatsbyImageData}
               className=" max-w-screen-lg h-[100vh] cursor-pointer p-16"
               alt={collection.title}
-              key={currImage.id}
+              key={currentImage.id}
               objectFit="contain"
             />
           </div>

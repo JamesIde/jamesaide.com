@@ -44,27 +44,24 @@ function Records({ data }) {
               record.imageBlock1.map(function (photo) {
                 if (photo.height >= 4000) {
                   return (
-                    <>
+                    <div className="collection-img-span2" onClick={e => imageModal(e, photo)}>
                       <GatsbyImage
                         image={getImage(photo.gatsbyImageData)}
-                        className="record-img-span2 hover:border-blue-500 hover:cursor-pointer duration-500"
-                        alt={records.title}
-                        onClick={e => imageModal(e, photo)}
+                        className="border-2 collection-img-span2 hover:border-blue-500 hover:cursor-pointer duration-500"
+                        alt={photo.id}
                       />
-                    </>
+                    </div>
                   )
                 } else {
                   return (
-                    <>
+                    <div className="collection-img" onClick={e => imageModal(e, photo)}>
                       <GatsbyImage
                         image={getImage(photo.gatsbyImageData)}
-                        className="record-img hover:border-blue-500 hover:cursor-pointer duration-500"
-                        alt={records.title}
-                        onClick={e => imageModal(e, photo)}
-                        loading="lazy"
-                        placeholder="blurred"
+                        alt={photo.id}
+                        className="border-2 collection-img hover:border-blue-500 hover:cursor-pointer duration-500"
+                        
                       />
-                    </>
+                    </div>
                   )
                 }
               })}
@@ -79,29 +76,24 @@ function Records({ data }) {
                 record.imageBlock2.map(function (photo) {
                   if (photo.height >= 4000) {
                     return (
-                      <>
+                      <div className="collection-img-span2" onClick={e => imageModal(e, photo)}>
                         <GatsbyImage
                           image={getImage(photo.gatsbyImageData)}
-                          className="record-img-span2 hover:border-blue-500 hover:cursor-pointer duration-500"
-                          alt={records.title}
-                          onClick={e => imageModal(e, photo)}
-                          loading="lazy"
-                          placeholder="blurred"
+                          className="border-2 collection-img-span2 hover:border-blue-500 hover:cursor-pointer duration-500"
+                          alt={photo.id}
                         />
-                      </>
+                      </div>
                     )
                   } else {
                     return (
-                      <>
+                      <div className="collection-img" onClick={e => imageModal(e, photo)}>
                         <GatsbyImage
                           image={getImage(photo.gatsbyImageData)}
-                          className="record-img hover:border-blue-500 hover:cursor-pointer duration-500"
-                          alt={records.title}
-                          onClick={e => imageModal(e, photo)}
-                          loading="lazy"
-                          placeholder="blurred"
+                          alt={photo.id}
+                          className="border-2 collection-img hover:border-blue-500 hover:cursor-pointer duration-500"
+                          
                         />
-                      </>
+                      </div>
                     )
                   }
                 })}
@@ -115,29 +107,24 @@ function Records({ data }) {
               record.imageBlock3.map(function (photo) {
                 if (photo.height >= 4000) {
                   return (
-                    <>
+                    <div className="collection-img-span2" onClick={e => imageModal(e, photo)}>
                       <GatsbyImage
                         image={getImage(photo.gatsbyImageData)}
-                        className="record-img-span2 hover:border-blue-500 hover:cursor-pointer duration-500"
-                        alt={records.title}
-                        onClick={e => imageModal(e, photo)}
-                        loading="lazy"
-                        placeholder="blurred"
+                        className="border-2 collection-img-span2 hover:border-blue-500 hover:cursor-pointer duration-500"
+                        alt={photo.id}
                       />
-                    </>
+                    </div>
                   )
                 } else {
                   return (
-                    <>
+                    <div className="collection-img" onClick={e => imageModal(e, photo)}>
                       <GatsbyImage
                         image={getImage(photo.gatsbyImageData)}
-                        className="record-img hover:border-blue-500 hover:cursor-pointer duration-500"
-                        alt={records.title}
-                        onClick={e => imageModal(e, photo)}
-                        loading="lazy"
-                        placeholder="blurred"
+                        alt={photo.id}
+                        className="border-2 collection-img hover:border-blue-500 hover:cursor-pointer duration-500"
+                        
                       />
-                    </>
+                    </div>
                   )
                 }
               })}

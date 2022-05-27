@@ -29,6 +29,9 @@ function FeaturedRecords() {
       <h1 className="text-center text-3xl mb-1 mt-4 nav-center text-bold">
         LATEST RECORDS
       </h1>
+      {/* <p className="font-mono text-center w-1/2 mx-auto">
+        [Longer, more sequenced and detailed records of my trips in various places]
+      </p> */}
       <div className="mx-auto lg:w-2/3 h-auto mt-5 mb-5">
         <div className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 gap-3 ">
           {latestRecord.edges.map(edge => {

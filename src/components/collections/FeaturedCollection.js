@@ -29,9 +29,6 @@ export default function FeaturedCollection() {
       <h1 className="text-center text-3xl mb-1 mt-3 nav-center text-bold">
         LATEST PHOTO COLLECTIONS
       </h1>
-      <p className="font-mono text-center w-1/2 mx-auto">
-        [Miscellaneous photos]
-      </p>
       {featuredCollection.edges.map(edge => {
         return (
           <FeaturedCollectionThumbnail

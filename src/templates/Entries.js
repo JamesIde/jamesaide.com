@@ -29,18 +29,31 @@ function Entries({ data }) {
         </a>
       ),
       [BLOCKS.EMBEDDED_ASSET]: node => {
-        const { gatsbyImageData, description } = node.data.target
+        const { gatsbyImageData, description, width } = node.data.target
+
         return (
-          <GatsbyImage
-            className="mx-auto mt-4 mb-4"
-            image={getImage(gatsbyImageData)}
-            alt={description}
-            loading="lazy"
-          />
+          <div className="collection-grid-container">
+            <div className="collection-grid">
+              <CustomComponent
+                image={gatsbyImageData}
+                description={description}
+              />
+              )
+            </div>
+          </div>
         )
       },
     },
   }
+
+  const CustomComponent = ({ image, width, description }) => (
+    <GatsbyImage
+      className="mx-auto mt-4 mb-4 collection-img-span w-[444px]"
+      image={getImage(image)}
+      alt={description}
+      loading="lazy"
+    />
+  )
 
   return (
     <Layout>
