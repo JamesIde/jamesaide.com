@@ -16,7 +16,7 @@ function Entries({ data }) {
     },
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => (
-        <p className="mb-4">{children}</p>
+        <p className="mb-4 mx-auto lg:w-3/5">{children}</p>
       ),
       [INLINES.HYPERLINK]: (node, children) => (
         <a
@@ -32,41 +32,26 @@ function Entries({ data }) {
         const { gatsbyImageData, description, width } = node.data.target
 
         return (
-          <div className="collection-grid-container">
-            <div className="collection-grid">
-              <CustomComponent
-                image={gatsbyImageData}
-                description={description}
-              />
-              )
-            </div>
-          </div>
+          <GatsbyImage
+            className="m-1 w-96"
+            image={getImage(gatsbyImageData)}
+            alt={description}
+            loading="lazy"
+          />
         )
       },
     },
   }
 
-  const CustomComponent = ({ image, width, description }) => (
-    <GatsbyImage
-      className="mx-auto mt-4 mb-4 collection-img-span w-[444px]"
-      image={getImage(image)}
-      alt={description}
-      loading="lazy"
-    />
-  )
-
   return (
     <Layout>
       <Helmet title={entries.title} />
-      <div className="w-3/5 overflow-hidden mx-auto text-black mt-2">
+      <div className="w-[65%] overflow-hidden mx-auto text-black mt-2">
         {/* Check image size.
         If a certain height,
         Have it span the entire screen like the banner image
         Else have it set up like a record image size coming from my phone! */}
-        {/* <GatsbyImage
-          image={getImage(entries.featuredImage)}
-          alt={entries.title}
-        /> */}
+
         <h5>{entries.title}</h5>
         {renderRichText(entries.main, options)}
       </div>
