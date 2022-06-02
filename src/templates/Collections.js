@@ -3,7 +3,8 @@ import Helmet from "../components/navigation&seo/Helmet"
 import Layout from "../components/navigation&seo/Layout"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { MDXRenderer } from "gatsby-plugin-mdx"
+import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
 function Collections({ data }) {
   const collection = data.contentfulPhotoCollection
 
@@ -20,23 +21,49 @@ function Collections({ data }) {
     setShowModal(false)
   }
 
+  const options = {
+    renderMark: {
+      [MARKS.BOLD]: text => <b className="font-bold">{text}</b>,
+    },
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (node, children) => (
+        <p className="mb-4 mx-auto lg:w-3/5 px-2">{children}</p>
+      ),
+      [INLINES.HYPERLINK]: (node, children) => (
+        <a
+          href={node.data.uri}
+          target="_blank"
+          rel="noreferrer"
+          className="italic text-orange-800 hover:text-cyan-500 duration-500"
+        >
+          {children}
+        </a>
+      ),
+    },
+  }
+
   return (
     <Layout>
       <Helmet title={collection.title} />
       <div className="mx-auto" onClick={handleClose}>
-        <div className="m-2 md:w-2/4 mx-auto pl-4 pr-4 ">
-          <h5 className="font-playfair text-bold text-[20px] mb-4 mt-4">
+        <div className="m-2 xl:w-[65%] lg:w-[65%] md:w-[65%] mx-auto pl-4 pr-4">
+          <div className="mb-1 mx-auto font-playfair text-[20px] text-[#343a40] font-semibold text-center ">
             {collection.title}
-          </h5>
-          <MDXRenderer>{collection.description.childMdx.body}</MDXRenderer>
-          <p className="mt-3 mb-4 text-gray-400">{collection.date}</p>
+          </div>
+          <p className="text-center text-sm text-gray-600 mb-1">
+            {collection.date}
+          </p>
+          {renderRichText(collection.main, options)}
         </div>
         <div className="collection-grid-container">
           <div className="collection-grid pl-4 pr-4">
             {collection.photos.map(function (photo) {
               if (photo.height >= 4000) {
                 return (
-                  <div className="collection-img-span2" onClick={e => handleClick(e, photo)}>
+                  <div
+                    className="collection-img-span2"
+                    onClick={e => handleClick(e, photo)}
+                  >
                     <GatsbyImage
                       image={getImage(photo.gatsbyImageData)}
                       className="border-2 collection-img-span2 hover:border-blue-500 hover:cursor-pointer duration-500"
@@ -46,12 +73,14 @@ function Collections({ data }) {
                 )
               } else {
                 return (
-                  <div className="collection-img" onClick={e => handleClick(e, photo)}>
+                  <div
+                    className="collection-img"
+                    onClick={e => handleClick(e, photo)}
+                  >
                     <GatsbyImage
                       image={getImage(photo.gatsbyImageData)}
                       alt={photo.id}
                       className="border-2 collection-img hover:border-blue-500 hover:cursor-pointer duration-500"
-                      
                     />
                   </div>
                 )
@@ -81,10 +110,8 @@ export const collections = graphql`
       title
       slug
       date(formatString: "MMMM DD, YYYY")
-      description {
-        childMdx {
-          body
-        }
+      main {
+        raw
       }
       photos {
         gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)

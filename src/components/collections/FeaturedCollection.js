@@ -5,14 +5,11 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 export default function FeaturedCollection() {
   const collections = useStaticQuery(graphql`
     query {
-      allContentfulPhotoCollection {
+      allContentfulPhotoCollection(sort: { fields: createdAt, order: DESC }) {
         edges {
           node {
             slug
             title
-            description {
-              description
-            }
             featuredImage {
               gatsbyImageData
             }
@@ -35,7 +32,6 @@ export default function FeaturedCollection() {
             slug={edge.node.slug}
             title={edge.node.title}
             image={edge.node.featuredImage}
-            description={edge.node.description.description}
             date={edge.node.date}
           />
         )

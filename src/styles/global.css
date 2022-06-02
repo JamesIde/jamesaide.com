@@ -15,8 +15,8 @@
     grid-template-columns: repeat(auto-fit, minmax(var(--column-width), 1fr));
     grid-auto-rows: var(--row-height);
     grid-gap: 15px;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -150,4 +150,22 @@ li {
     color: #343a40;
     font-weight: 500;
     padding-top: 25px;
+}
+
+
+
+.about-table > .table {
+    display: grid;
+    grid-template-columns: 1fr 1fr 60% 20% 1fr ; 
+    max-width: 1000px;
+}
+
+.about-table > .table > div {
+  margin: 2px;
+  padding: 5px;
+}
+
+/* Rich text styling */
+.gatsby-image-styler > #gatsby-image{
+    
 }
