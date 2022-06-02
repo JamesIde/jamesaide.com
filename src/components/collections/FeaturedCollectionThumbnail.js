@@ -21,7 +21,7 @@ function FeaturedCollectionThumbnail({ slug, title, image, date }) {
           image={getImage(image)}
           loading="lazy"
           placeholder="blurred"
-          className="flex mx-auto max-w-lg"
+          className="flex mx-auto max-w-xl"
         />
       </Link>
     </div>
