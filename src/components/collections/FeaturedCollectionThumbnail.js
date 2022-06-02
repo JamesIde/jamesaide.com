@@ -5,7 +5,7 @@ function FeaturedCollectionThumbnail({ slug, title, image, date }) {
   return (
     <div
       className="
-    container mx-auto lg:w-[40%] mt-2"
+    container mx-auto w-1/3 mt-2"
     >
       <div className="px-6 py-2 mx-auto ">
         <div className="mb-1 mx-auto font-playfair text-[20px] text-[#343a40] leading-6 font-semibold text-center hover:text-sky-700">
@@ -21,7 +21,7 @@ function FeaturedCollectionThumbnail({ slug, title, image, date }) {
           image={getImage(image)}
           loading="lazy"
           placeholder="blurred"
-          className="flex mx-auto max-w-xl"
+          className="flex mx-auto "
         />
       </Link>
     </div>
