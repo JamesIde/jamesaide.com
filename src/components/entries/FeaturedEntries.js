@@ -26,6 +26,9 @@ function FeaturedEntries() {
   const latestEntries = entries.allContentfulEntries
   return (
     <div className="w-4/5 mx-auto">
+      <h1 className="text-center text-3xl mb-3 mt-3 nav-center text-bold">
+        LATEST ENTRIES
+      </h1>
       {latestEntries.edges.map(edge => {
         return (
           <FeaturedEntryThumbnail
