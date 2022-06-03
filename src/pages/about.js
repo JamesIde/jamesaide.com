@@ -64,7 +64,6 @@ function About() {
         <section className="about-table mx-auto">
           <div className="table mx-auto overflow-auto">
             <div className="font-bold">Name</div>
-            <div className="font-bold">Created</div>
             <div className="font-bold mr-[20px]">Description</div>
             <div className="font-bold">Tech</div>
             <div className="font-bold">Links</div>
@@ -80,7 +79,6 @@ function About() {
                       {item.name}
                     </Link>
                   </div>
-                  <div>{item.createdAt}</div>
 
                   <div>{item.description}</div>
                   <div>

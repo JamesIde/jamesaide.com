@@ -9,7 +9,7 @@ function FeaturedEntries() {
           node {
             title
             featuredImage {
-              gatsbyImageData(formats: WEBP, layout: CONSTRAINED, width: 1500)
+              gatsbyImageData
             }
             slug
             contentful_id

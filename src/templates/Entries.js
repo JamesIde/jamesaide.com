@@ -45,10 +45,11 @@ function Entries({ data }) {
         const { gatsbyImageData, description, height, width } = node.data.target
 
         if (height > 3500) {
+          // Portrait
           return (
             <span onClick={e => handleClick(e, gatsbyImageData)}>
               <GatsbyImage
-                className="m-1 w-[30%] py-auto cursor-pointer"
+                className="m-[5px] w-[30%] py-auto cursor-pointer"
                 id="gatsby-image"
                 image={getImage(gatsbyImageData)}
                 alt={description}
@@ -57,10 +58,11 @@ function Entries({ data }) {
             </span>
           )
         } else {
+          // Landscape
           return (
             <span onClick={e => handleClick(e, gatsbyImageData)}>
               <GatsbyImage
-                className="w-[48%] mx-1 cursor-pointer"
+                className="w-[48%] xl:mx-1 mx-[2px] cursor-pointer"
                 id="gatsby-image"
                 image={getImage(gatsbyImageData)}
                 alt={description}

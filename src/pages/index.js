@@ -15,7 +15,7 @@ export default function Home() {
       <Navigation />
       <FeaturedRecords />
       <FeaturedCollection />
-      {/* <FeaturedEntries /> */}
+      <FeaturedEntries />
       <Footer />
     </>
   )
