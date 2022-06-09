@@ -89,6 +89,7 @@ function Entries({ data }) {
         </div>
         {renderRichText(entries.main, options)}
       </div>
+
       {showModal && (
         <div
           className="fixed flex justify-center items-center h-screen w-full top-0 left-0 bg-blurred"
@@ -96,7 +97,7 @@ function Entries({ data }) {
         >
           <GatsbyImage
             image={getImage(currentImage)}
-            className=" max-w-screen-lg h-[100vh] cursor-pointer p-16"
+            className=" max-w-screen-xl h-[100vh] cursor-pointer p-16"
             alt={entries.title}
             key={currentImage.id}
             objectFit="contain"

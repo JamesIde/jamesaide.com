@@ -183,11 +183,14 @@ function Records({ data }) {
           <div className="fixed flex justify-center items-center h-screen w-full top-0 left-0 bg-blurred">
             <GatsbyImage
               image={currImage.gatsbyImageData}
-              className=" max-w-screen-lg h-[100vh] cursor-pointer p-16"
+              className=" max-w-screen-xl h-[90vh] cursor-pointer p-16"
               alt={records.title}
               key={currImage.id}
               objectFit="contain"
             />
+            <p className="text-white fixed xl:mt-[875px] lg:mt-[850px] md:mt-[850px] mt-52">
+              {currImage.description}
+            </p>
           </div>
         )}
       </div>
@@ -218,6 +221,7 @@ export const records = graphql`
       imageBlock1 {
         gatsbyImageData
         height
+        description
       }
       dayTwoDescription {
         childMdx {
@@ -227,6 +231,7 @@ export const records = graphql`
       imageBlock2 {
         gatsbyImageData
         height
+        description
       }
       dayThreeDescription {
         childMdx {
@@ -236,6 +241,7 @@ export const records = graphql`
       imageBlock3 {
         gatsbyImageData
         height
+        description
       }
       map {
         childMdx {

@@ -89,15 +89,20 @@ function Collections({ data }) {
           </div>
         </div>
         {showModal && (
-          <div className="fixed flex justify-center items-center h-screen w-full top-0 left-0 bg-blurred">
-            <GatsbyImage
-              image={currentImage.gatsbyImageData}
-              className=" max-w-screen-lg h-[100vh] cursor-pointer p-16"
-              alt={collection.title}
-              key={currentImage.id}
-              objectFit="contain"
-            />
-          </div>
+          <>
+            <div className="fixed flex justify-center items-center h-screen w-full top-0 left-0 bg-blurred">
+              <GatsbyImage
+                image={currentImage.gatsbyImageData}
+                className=" max-w-screen-xl h-[90vh] cursor-pointer p-16"
+                alt={collection.title}
+                key={currentImage.id}
+                objectFit="contain"
+              />
+              <p className="text-white fixed xl:mt-[875px] lg:mt-[850px] md:mt-[850px] mt-52">
+                {currentImage.description}
+              </p>
+            </div>
+          </>
         )}
       </div>
     </Layout>
@@ -117,6 +122,7 @@ export const collections = graphql`
         gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
         height
         id
+        description
       }
     }
   }
