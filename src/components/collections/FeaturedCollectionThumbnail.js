@@ -7,7 +7,7 @@ function FeaturedCollectionThumbnail({ slug, title, image, date }) {
       <div className="grid grid-cols-1">
         <div className="px-6 py-2 mx-auto ">
           <div className="mb-1 mx-auto font-playfair text-[20px] text-[#343a40] leading-6 font-semibold text-center hover:text-sky-700">
-            <Link to={`records/${slug}`} className="duration-500">
+            <Link to={`collections/${slug}`} className="duration-500">
               {title}
             </Link>
           </div>

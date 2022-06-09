@@ -31,12 +31,6 @@ function Navigation({ title }) {
             >
               GEAR
             </Link>
-            {/* <Link
-              to="/"
-              className="text-base hover:text-sky-700 duration-500 lg:mr-3 md:mr-3 sm:mr-3 mr-3"
-            >
-              CONTACT
-            </Link> */}
             <a
               href="mailto:james.ide775@gmail.com"
               target="_#"
