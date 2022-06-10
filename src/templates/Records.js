@@ -188,9 +188,16 @@ function Records({ data }) {
               key={currImage.id}
               objectFit="contain"
             />
-            <p className="text-white fixed xl:mt-[875px] lg:mt-[850px] md:mt-[850px] mt-52">
-              {currImage.description}
-            </p>
+            {currImage.height === 4032 ? (
+              <p className="text-white fixed xl:mt-[875px] lg:mt-[850px] md:mt-[850px] mt-[800px]">
+                {currImage.description}
+                {/* if height = 4032 */}
+              </p>
+            ) : (
+              <p className="text-white fixed xl:mt-[875px] lg:mt-[850px] md:mt-[850px] mt-80">
+                {currImage.description}
+              </p>
+            )}
           </div>
         )}
       </div>

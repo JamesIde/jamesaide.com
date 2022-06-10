@@ -98,9 +98,16 @@ function Collections({ data }) {
                 key={currentImage.id}
                 objectFit="contain"
               />
-              <p className="text-white fixed xl:mt-[875px] lg:mt-[850px] md:mt-[850px] mt-52">
-                {currentImage.description}
-              </p>
+              {currentImage.height === 4032 ? (
+                <p className="text-white fixed xl:mt-[875px] lg:mt-[850px] md:mt-[850px] mt-[800px]">
+                  {currentImage.description}
+                  {/* if height = 4032 */}
+                </p>
+              ) : (
+                <p className="text-white fixed xl:mt-[875px] lg:mt-[850px] md:mt-[850px] mt-80">
+                  {currentImage.description}
+                </p>
+              )}
             </div>
           </>
         )}
