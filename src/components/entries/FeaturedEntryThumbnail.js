@@ -3,29 +3,21 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 function FeaturedEntryThumbnail({ slug, title, image, blurb, date, key }) {
   return (
-    <div
-      className="
-    container mx-auto max-w-xl px-2 mt-2"
-    >
-      <div className="px-6 py-2 mx-auto ">
-        <div className="mb-1 mx-auto font-playfair text-[20px] text-[#343a40] leading-6 font-semibold text-center hover:text-sky-700">
-          <Link to={`entries/${slug}`} className="duration-500">
-            {title}
-          </Link>
-        </div>
-        <p className="text-center text-sm text-gray-600">{date}</p>
-      </div>
-
+    <>
       <Link to={`entries/${slug}`}>
-        <GatsbyImage
-          alt={title}
-          image={getImage(image)}
-          loading="lazy"
-          placeholder="blurred"
-          className="object-contain"
-        />
+        <div class="xl:w-[45%] lg:w-2/3 md:w-2/3 mb-8 mx-auto">
+          <div class="flex flex-col justify-between md:flex-row">
+            <h4 class="w-[90%] mb-2 text-lg font-medium text-gray-900 md:text-xl dark:text-gray-100">
+              {title}
+            </h4>
+            <p class="w-32 mb-4 text-left text-gray-500 md:text-right md:mb-0">
+              {date}
+            </p>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400">{blurb}</p>
+        </div>
       </Link>
-    </div>
+    </>
   )
 }
 

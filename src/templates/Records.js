@@ -146,34 +146,40 @@ function Records({ data }) {
           </div>
         </div>
         <MDXRenderer>{record.dayFourDescription.childMdx.body}</MDXRenderer>
-        {/* <div className="record-grid">
-          {record.imageBlock4 &&
-            record.imageBlock4.map(function (photo) {
-              if (photo.height >= 4000) {
-                return (
-                  <>
-                    <GatsbyImage
-                      image={getImage(photo.gatsbyImageData)}
-                      className="record-img-span2 hover:border-blue-500 hover:cursor-pointer duration-500"
-                      alt={records.title}
+        <div className="record-grid-container">
+          <div className="record-grid">
+            {record.imageBlock4 &&
+              record.imageBlock4.map(function (photo) {
+                if (photo.height >= 4000) {
+                  return (
+                    <div
+                      className="collection-img-span2"
                       onClick={e => imageModal(e, photo)}
-                    />
-                  </>
-                )
-              } else {
-                return (
-                  <>
-                    <GatsbyImage
-                      image={getImage(photo.gatsbyImageData)}
-                      className="record-img hover:border-blue-500 hover:cursor-pointer duration-500"
-                      alt={records.title}
+                    >
+                      <GatsbyImage
+                        image={getImage(photo.gatsbyImageData)}
+                        className=" collection-img-span2 hover:cursor-pointer duration-500"
+                        alt={photo.id}
+                      />
+                    </div>
+                  )
+                } else {
+                  return (
+                    <div
+                      className="collection-img"
                       onClick={e => imageModal(e, photo)}
-                    />
-                  </>
-                )
-              }
-            })}
-        </div> */}
+                    >
+                      <GatsbyImage
+                        image={getImage(photo.gatsbyImageData)}
+                        alt={photo.id}
+                        className="collection-img hover:cursor-pointer duration-500"
+                      />
+                    </div>
+                  )
+                }
+              })}
+          </div>
+        </div>
         <MDXRenderer>{record.map.childMdx.body}</MDXRenderer>
         <br />
         <MDXRenderer>{record.travelDescription.childMdx.body}</MDXRenderer>
@@ -270,6 +276,11 @@ export const records = graphql`
         childMdx {
           body
         }
+      }
+      imageBlock4 {
+        gatsbyImageData
+        height
+        description
       }
     }
   }

@@ -35,7 +35,7 @@ function FeaturedEntries() {
             slug={edge.node.slug}
             title={edge.node.title}
             image={edge.node.featuredImage}
-            blurb={edge.node.blurb}
+            blurb={edge.node.blurb.blurb}
             date={edge.node.date}
             key={edge.node.id}
           />
