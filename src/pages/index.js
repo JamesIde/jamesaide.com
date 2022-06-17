@@ -6,13 +6,15 @@ import Helmet from "../components/navigation&seo/Helmet"
 import FeaturedCollection from "../components/collections/FeaturedCollection"
 import FeaturedRecords from "../components/records/FeaturedRecords"
 import FeaturedEntries from "../components/entries/FeaturedEntries"
+import QuickInfoGuide from "../components/misc/QuickInfoGuide"
 export default function Home() {
   return (
     <>
       <Helmet title="Home" />
       {/* <Banner /> */}
+      {/* <QuickInfoGuide /> */}
       {/* Nav goes once banner is updated after LP */}
-      <Navigation />
+      {/* <Navigation /> */}
       <FeaturedRecords />
       <FeaturedCollection />
       <FeaturedEntries />

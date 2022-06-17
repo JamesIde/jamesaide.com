@@ -7,7 +7,7 @@ function FeaturedEntryThumbnail({ slug, title, image, blurb, date, key }) {
       <Link to={`entries/${slug}`}>
         <div class="xl:w-[45%] lg:w-2/3 md:w-2/3 mb-8 mx-auto">
           <div class="flex flex-col justify-between md:flex-row">
-            <h4 class="w-[90%] mb-2 text-lg font-medium text-gray-900 md:text-xl dark:text-gray-100">
+            <h4 class="w-[90%] mb-2 text-lg font-medium text-gray-900 md:text-xl dark:text-gray-100 hover:text-ocre-red">
               {title}
             </h4>
             <p class="w-32 mb-4 text-left text-gray-500 md:text-right md:mb-0">

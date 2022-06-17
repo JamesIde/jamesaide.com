@@ -18,10 +18,8 @@ function Card({ slug, title, location, image, date, description }) {
           />
         </Link>
         <div className="px-6 py-4 max-w-fit mx-auto ">
-          <div className="mb-1 max-w-fit mx-auto font-playfair text-[1.5rem] text-[#343a40] leading-6 font-semibold text-center hover:text-sky-700">
-            <Link to={`records/${slug}`} className="duration-500">
-              {title}
-            </Link>
+          <div className="mb-1 max-w-fit mx-auto font-playfair text-[1.5rem] text-[#343a40] leading-6 font-semibold text-center hover:text-ocre-red">
+            <Link to={`records/${slug}`}>{title}</Link>
           </div>
           <p className="text-center mb-3 mt-2 font-mono">[{location}]</p>
           <hr className="mb-5" />

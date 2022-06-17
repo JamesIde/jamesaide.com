@@ -10,19 +10,19 @@ function Footer() {
         <a href="https://github.com/JamesIde" target="#" className="">
           <FaGithub
             size="1.2rem"
-            className="text-[#222] hover:text-gray-500 duration-500 cursor-pointer mr-1 ml-1"
+            className="text-[#222] hover:text-ocre-red cursor-pointer mr-1 ml-1"
           />
         </a>
         <a href="https://www.linkedin.com/in/james-ide-a92368180/" target="#">
           <FaLinkedinIn
             size="1.2rem"
-            className="text-[#222] hover:text-gray-500 duration-500 cursor-pointer mr-1 ml-1"
+            className="text-[#222] hover:text-ocre-red cursor-pointer mr-1 ml-1"
           />
         </a>
         <a href="mailto:james.ide775@gmail.com" target="#">
           <SiGmail
             size="1.2rem"
-            className="text-[#222] hover:text-gray-500 duration-500 cursor-pointer mr-1 ml-1"
+            className="text-[#222] hover:text-ocre-red cursor-pointer mr-1 ml-1"
           />
         </a>
       </div>
