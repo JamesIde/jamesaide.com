@@ -4,7 +4,7 @@ import FeaturedEntryThumbnail from "./FeaturedEntryThumbnail"
 function FeaturedEntries() {
   const entries = useStaticQuery(graphql`
     query {
-      allContentfulEntries {
+      allContentfulEntries(sort: { fields: date, order: DESC }) {
         edges {
           node {
             title
