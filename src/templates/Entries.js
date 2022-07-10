@@ -32,7 +32,7 @@ function Entries({ data }) {
         <p className="mb-4 mx-auto lg:w-3/5 px-2">{children}</p>
       ),
       [BLOCKS.HEADING_4]: (node, children) => (
-        <h4 className="text-2xl font-bold mb-3 mx-auto lg:w-3/5 px-2">
+        <h4 className="text-xl font-bold mb-3 mx-auto lg:w-3/5 px-2">
           {children}
         </h4>
       ),
