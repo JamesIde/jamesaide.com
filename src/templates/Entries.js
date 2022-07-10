@@ -31,6 +31,11 @@ function Entries({ data }) {
       [BLOCKS.PARAGRAPH]: (node, children) => (
         <p className="mb-4 mx-auto lg:w-3/5 px-2">{children}</p>
       ),
+      [BLOCKS.HEADING_4]: (node, children) => (
+        <h4 className="text-2xl font-bold mb-3 mx-auto lg:w-3/5 px-2">
+          {children}
+        </h4>
+      ),
       [INLINES.HYPERLINK]: (node, children) => (
         <a
           href={node.data.uri}
@@ -44,7 +49,7 @@ function Entries({ data }) {
       [BLOCKS.EMBEDDED_ASSET]: node => {
         const { gatsbyImageData, description, height, width } = node.data.target
 
-        if (height > 3500) {
+        if (height > 3500 && width < 4700) {
           // Portrait
           return (
             <span onClick={e => handleClick(e, gatsbyImageData)}>
@@ -54,6 +59,20 @@ function Entries({ data }) {
                 image={getImage(gatsbyImageData)}
                 alt={description}
                 loading="lazy"
+              />
+            </span>
+          )
+        } else if (width > 7000) {
+          // Panorama
+          return (
+            <span onClick={e => handleClick(e, gatsbyImageData)}>
+              <GatsbyImage
+                className="m-[5px] w-full py-auto cursor-pointer"
+                id="gatsby-image"
+                image={getImage(gatsbyImageData)}
+                alt={description}
+                loading="lazy"
+                objectFit="fill"
               />
             </span>
           )
@@ -82,7 +101,7 @@ function Entries({ data }) {
       <Helmet title={entries.title} />
       <div className="xl:w-[65%] lg:w-[65%] md:w-[65%] overflow-hidden mx-auto text-black mt-2 px-2">
         <div className="py-2 mx-auto ">
-          <div className="mb-1 mx-auto font-playfair text-[20px] text-[#343a40] font-semibold text-center ">
+          <div className="mb-1 mx-auto font-playfair text-[20px] text-black font-semibold text-center ">
             {entries.title}
           </div>
           <p className="text-center text-sm text-gray-600">{entries.date}</p>
@@ -97,7 +116,7 @@ function Entries({ data }) {
         >
           <GatsbyImage
             image={getImage(currentImage)}
-            className=" max-w-screen-xl h-[100vh] cursor-pointer p-16"
+            className=" max-w-screen-2xl h-[100vh] cursor-pointer p-16"
             alt={entries.title}
             key={currentImage.id}
             objectFit="contain"
@@ -124,7 +143,7 @@ export const entries = graphql`
           ... on ContentfulAsset {
             contentful_id
             title
-            gatsbyImageData(width: 2000)
+            gatsbyImageData
             __typename
             height
             width
