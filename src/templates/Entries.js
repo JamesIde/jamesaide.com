@@ -67,7 +67,7 @@ function Entries({ data }) {
           return (
             <span onClick={e => handleClick(e, gatsbyImageData)}>
               <GatsbyImage
-                className="m-[5px] w-full py-auto cursor-pointer"
+                className="mb-2 w-full cursor-pointer"
                 id="gatsby-image"
                 image={getImage(gatsbyImageData)}
                 alt={description}
