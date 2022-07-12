@@ -94,9 +94,7 @@ const SEO = ({ title, desc, banner }) => {
           src="https://cdn.lr-in-prod.com/LogRocket.min.js"
           crossorigin="anonymous"
         ></script>
-        <script>
-          window.LogRocket && window.LogRocket.init('james/my-website');
-        </script>
+
         <script src="https://lighterpack.com/e/wwar9x"></script>
         <meta property="og:site_name" content={facebook} />
         <meta property="og:locale" content={ogLanguage} />

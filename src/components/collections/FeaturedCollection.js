@@ -24,7 +24,7 @@ export default function FeaturedCollection() {
   return (
     <>
       <h1 className="text-center text-3xl mb-1 mt-3 nav-center text-bold">
-        LATEST PHOTO COLLECTIONS
+        LATEST COLLECTIONS
       </h1>
       {featuredCollection.edges.map(edge => {
         return (

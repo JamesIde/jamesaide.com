@@ -147,6 +147,7 @@ export const entries = graphql`
             __typename
             height
             width
+            description
           }
         }
       }
