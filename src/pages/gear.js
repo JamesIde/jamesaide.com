@@ -20,9 +20,9 @@ function gear() {
             Not loaded? Click here
           </a>
         </div>
-        {/* <ReturnToHome /> */}
-        <Link to="/" className="hover:text-sky-700 duration-500">
-          <p className="text-center font-mono">[Return to home]</p>
+
+        <Link to="/" className="border-2 hover:text-sky-700 duration-500 w-max">
+          <p className="text-center font-mono ">[Return to home]</p>
         </Link>
       </div>
     </Layout>
