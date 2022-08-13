@@ -12,7 +12,7 @@ function gear() {
       <Helmet title="Gear" />
       <div className="mx-auto lg:w-2/3 h-auto mt-5 mb-5">
         <div className="mx-auto ml-5 mr-5">
-          <div id="wwar9x"></div>
+          <div id="yt4f2y"></div>
           <a
             onClick={refresh}
             className="hover:text-sky-700 duration-500 italic cursor-pointer"
@@ -20,10 +20,14 @@ function gear() {
             Not loaded? Click here
           </a>
         </div>
-
-        <Link to="/" className="border-2 hover:text-sky-700 duration-500 w-max">
-          <p className="text-center font-mono">[Return to home]</p>
-        </Link>
+        <div>
+          <Link
+            to="/"
+            className="hover:text-sky-700 duration-500 font-mono text-center"
+          >
+            <p className="text-center font-mono">[Return to home]</p>
+          </Link>
+        </div>
       </div>
     </Layout>
   )

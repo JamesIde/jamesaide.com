@@ -95,7 +95,7 @@ const SEO = ({ title, desc, banner }) => {
           crossorigin="anonymous"
         ></script>
 
-        <script src="https://lighterpack.com/e/wwar9x"></script>
+        <script src="https://lighterpack.com/e/yt4f2y"></script>
         <meta property="og:site_name" content={facebook} />
         <meta property="og:locale" content={ogLanguage} />
         <meta property="og:url" content={seo.url} />
