@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9fcda215-bdf5-47b2-a5a6-72c4a546aace/deploy-status)](https://app.netlify.com/sites/trusting-darwin-9db938/deploys)
 
-My personal website. A place to display my hiking trips, photos, work experience and projects. View it [here](https://jamesaide.com/).
+My personal website. A place to display my hiking trips, photos, entries and projects. View it [here](https://jamesaide.com/).
 
 The front end was created with [Gatsbyjs](https://www.gatsbyjs.com/), and styled with [TailwindCSS](https://tailwindcss.com/). All images and text are stored on Contentful and the site is hosted on [Netlify](https://www.netlify.com/). The text provided by Contentful is rendered into normal html using [MDX](https://clubmate.fi/mdx-in-gatsby), which is like Markdown, but renders jsx and styling. This allows me to style dynamically generated HTML and bypass any TailwindCSS constraints.
 
