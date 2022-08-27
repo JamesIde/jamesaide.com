@@ -43,15 +43,9 @@ function About() {
             Github
           </a>
           {""}.
-          {/* {" "}
-          or{" "}
-          <a
-            href="https://www.jameside.info/"
-            target="_#"
-            className="text-black underline"
-          >
-            See More
-          </a> */}
+        </p>
+        <p className="text-gray-600 mt-5 text-sm">
+          Built with GatsbyJS, MDX, GraphQL, Contentful and TailwindCSS.
         </p>
       </div>
     </>
