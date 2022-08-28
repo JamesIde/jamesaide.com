@@ -45,7 +45,7 @@ function About() {
           {""}.
         </p>
         <p className="text-gray-600 mt-5 text-sm">
-          Built with GatsbyJS, MDX, GraphQL, Contentful and TailwindCSS.
+          Built with Gatsby, MDX, GraphQL, Contentful and TailwindCSS.
         </p>
       </div>
     </>
