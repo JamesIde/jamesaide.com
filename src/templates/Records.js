@@ -22,7 +22,7 @@ function Records({ data }) {
     <Layout>
       <Helmet title={record.title} />
       <div
-        className="lg:w-[900px] sm:w-[600px] overflow-hidden mx-auto main-wrapper text-black mt-2"
+        className="lg:w-[900px] sm:w-[600px] overflow-hidden mx-auto main-wrapper text-black mt-2 mb-3"
         onClick={closeModal}
       >
         <GatsbyImage

@@ -1,5 +1,4 @@
 import React from "react"
-import Footer from "../components/navigation&seo/Footer"
 import Banner from "../components/misc/Banner"
 import Navigation from "../components/navigation&seo/Navigation"
 import Helmet from "../components/navigation&seo/Helmet"
@@ -17,7 +16,6 @@ export default function Home() {
       <FeaturedRecords />
       <FeaturedCollection />
       <FeaturedEntries />
-      <Footer />
     </>
   )
 }

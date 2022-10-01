@@ -45,7 +45,7 @@ function Collections({ data }) {
   return (
     <Layout>
       <Helmet title={collection.title} />
-      <div className="mx-auto" onClick={handleClose}>
+      <div className="mx-auto mb-4" onClick={handleClose}>
         <div className="m-2 xl:w-[65%] lg:w-[65%] md:w-[65%] mx-auto pl-4 pr-4">
           <div className="mb-1 mx-auto font-playfair text-[20px] text-[#343a40] font-semibold text-center ">
             {collection.title}
