@@ -29,8 +29,8 @@ function FeaturedRecords() {
       <h1 className="text-center text-3xl mb-1 mt-4 nav-center text-bold">
         LATEST RECORDS
       </h1>
-      <div className="mx-auto lg:w-[43%] h-auto mt-5 mb-5">
-        <div className="grid xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 gap-3 ">
+      <div className="mx-auto xl:w-[35%] lg:w-[70%] md:w-[70%] h-auto mt-5 mb-5">
+        <div className="grid grid-cols-1 gap-3 ">
           {latestRecord.edges.map(edge => {
             return (
               <Record
