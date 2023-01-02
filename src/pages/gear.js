@@ -1,7 +1,6 @@
 import React from "react"
 import Helmet from "../components/navigation&seo/Helmet"
 import Layout from "../components/navigation&seo/Layout"
-import ReturnToHome from "../components/misc/ReturnToHome"
 import { Link } from "gatsby"
 function gear() {
   const refresh = () => {
@@ -12,7 +11,7 @@ function gear() {
       <Helmet title="Gear" />
       <div className="mx-auto lg:w-2/3 h-auto mt-5 mb-5">
         <div className="mx-auto ml-5 mr-5">
-          <div id="yt4f2y"></div>
+          <div id="0bu8zl"></div>
           <a
             onClick={refresh}
             className="hover:text-sky-700 duration-500 italic cursor-pointer"
