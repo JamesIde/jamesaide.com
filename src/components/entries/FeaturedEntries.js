@@ -8,9 +8,6 @@ function FeaturedEntries() {
         edges {
           node {
             title
-            featuredImage {
-              gatsbyImageData
-            }
             slug
             contentful_id
             blurb {

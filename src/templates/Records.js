@@ -18,6 +18,9 @@ function Records({ data }) {
   const closeModal = () => {
     setModal(false)
   }
+
+  const title = record.title.split("|")[0]
+
   return (
     <Layout>
       <Helmet title={record.title} />
@@ -25,12 +28,9 @@ function Records({ data }) {
         className="lg:w-[900px] sm:w-[600px] overflow-hidden mx-auto main-wrapper text-black mt-2 mb-3"
         onClick={closeModal}
       >
-        <GatsbyImage
-          image={getImage(record.featuredImage)}
-          alt={record.title}
-        />
+        <GatsbyImage image={getImage(record.featuredImage)} alt={title} />
         <section className="p-4">
-          <h1 className="text-xl text-center nav-center">{record.title}</h1>
+          <h1 className="text-xl text-center nav-center">{title}</h1>
           <p className="text-center mb-2 mt-2 font-mono">[{record.location}]</p>
           <p>{record.description}</p>
           <p className="text-right">{record.date}</p>
@@ -42,16 +42,29 @@ function Records({ data }) {
           <div className="record-grid">
             {record.imageBlock1 &&
               record.imageBlock1.map(function (photo) {
-                if (photo.height >= 4000) {
+                if (photo.height >= 4000 && photo.width === 3024) {
                   return (
                     <div
-                      className="collection-img-span2"
+                      className="collection-img-span2 border-red-500"
                       onClick={e => imageModal(e, photo)}
                     >
                       <GatsbyImage
                         image={getImage(photo.gatsbyImageData)}
-                        className="collection-img-span2 hover:cursor-pointer duration-500"
+                        className=" collection-img-span2 hover:cursor-pointer duration-500"
                         alt={photo.id}
+                      />
+                    </div>
+                  )
+                } else if (photo.height >= 4000 && photo.width === 4000) {
+                  return (
+                    <div
+                      className="collection-img-col2"
+                      onClick={e => imageModal(e, photo)}
+                    >
+                      <GatsbyImage
+                        image={getImage(photo.gatsbyImageData)}
+                        alt={photo.id}
+                        className="collection-img hover:cursor-pointer duration-500"
                       />
                     </div>
                   )
@@ -79,16 +92,29 @@ function Records({ data }) {
             <div className="record-grid">
               {record.imageBlock2 &&
                 record.imageBlock2.map(function (photo) {
-                  if (photo.height >= 4000) {
+                  if (photo.height >= 4000 && photo.width === 3024) {
                     return (
                       <div
-                        className="collection-img-span2"
+                        className="collection-img-span2 border-red-500"
                         onClick={e => imageModal(e, photo)}
                       >
                         <GatsbyImage
                           image={getImage(photo.gatsbyImageData)}
-                          className="collection-img-span2 hover:cursor-pointer duration-500"
+                          className=" collection-img-span2 hover:cursor-pointer duration-500"
                           alt={photo.id}
+                        />
+                      </div>
+                    )
+                  } else if (photo.height >= 4000 && photo.width === 4000) {
+                    return (
+                      <div
+                        className="collection-img-col2"
+                        onClick={e => imageModal(e, photo)}
+                      >
+                        <GatsbyImage
+                          image={getImage(photo.gatsbyImageData)}
+                          alt={photo.id}
+                          className="collection-img hover:cursor-pointer duration-500"
                         />
                       </div>
                     )
@@ -101,7 +127,7 @@ function Records({ data }) {
                         <GatsbyImage
                           image={getImage(photo.gatsbyImageData)}
                           alt={photo.id}
-                          className="collection-img  hover:cursor-pointer duration-500"
+                          className="collection-img hover:cursor-pointer duration-500"
                         />
                       </div>
                     )
@@ -115,16 +141,29 @@ function Records({ data }) {
           <div className="record-grid">
             {record.imageBlock3 &&
               record.imageBlock3.map(function (photo) {
-                if (photo.height >= 4000) {
+                if (photo.height >= 4000 && photo.width === 3024) {
                   return (
                     <div
-                      className="collection-img-span2"
+                      className="collection-img-span2 border-red-500"
                       onClick={e => imageModal(e, photo)}
                     >
                       <GatsbyImage
                         image={getImage(photo.gatsbyImageData)}
                         className=" collection-img-span2 hover:cursor-pointer duration-500"
                         alt={photo.id}
+                      />
+                    </div>
+                  )
+                } else if (photo.height >= 4000 && photo.width === 4000) {
+                  return (
+                    <div
+                      className="collection-img-col2"
+                      onClick={e => imageModal(e, photo)}
+                    >
+                      <GatsbyImage
+                        image={getImage(photo.gatsbyImageData)}
+                        alt={photo.id}
+                        className="collection-img hover:cursor-pointer duration-500"
                       />
                     </div>
                   )
@@ -150,16 +189,77 @@ function Records({ data }) {
           <div className="record-grid">
             {record.imageBlock4 &&
               record.imageBlock4.map(function (photo) {
-                if (photo.height >= 4000) {
+                if (photo.height >= 4000 && photo.width === 3024) {
                   return (
                     <div
-                      className="collection-img-span2"
+                      className="collection-img-span2 border-red-500"
                       onClick={e => imageModal(e, photo)}
                     >
                       <GatsbyImage
                         image={getImage(photo.gatsbyImageData)}
                         className=" collection-img-span2 hover:cursor-pointer duration-500"
                         alt={photo.id}
+                      />
+                    </div>
+                  )
+                } else if (photo.height >= 4000 && photo.width === 4000) {
+                  return (
+                    <div
+                      className="collection-img-col2"
+                      onClick={e => imageModal(e, photo)}
+                    >
+                      <GatsbyImage
+                        image={getImage(photo.gatsbyImageData)}
+                        alt={photo.id}
+                        className="collection-img hover:cursor-pointer duration-500"
+                      />
+                    </div>
+                  )
+                } else {
+                  return (
+                    <div
+                      className="collection-img"
+                      onClick={e => imageModal(e, photo)}
+                    >
+                      <GatsbyImage
+                        image={getImage(photo.gatsbyImageData)}
+                        alt={photo.id}
+                        className="collection-img hover:cursor-pointer duration-500"
+                      />
+                    </div>
+                  )
+                }
+              })}
+          </div>
+        </div>
+        <MDXRenderer>{record.dayFiveDescription.childMdx.body}</MDXRenderer>
+        <div className="record-grid-container">
+          <div className="record-grid">
+            {record.imageBlock5 &&
+              record.imageBlock5.map(function (photo) {
+                if (photo.height >= 4000 && photo.width === 3024) {
+                  return (
+                    <div
+                      className="collection-img-span2 border-red-500"
+                      onClick={e => imageModal(e, photo)}
+                    >
+                      <GatsbyImage
+                        image={getImage(photo.gatsbyImageData)}
+                        className=" collection-img-span2 hover:cursor-pointer duration-500"
+                        alt={photo.id}
+                      />
+                    </div>
+                  )
+                } else if (photo.height >= 4000 && photo.width === 4000) {
+                  return (
+                    <div
+                      className="collection-img-col2"
+                      onClick={e => imageModal(e, photo)}
+                    >
+                      <GatsbyImage
+                        image={getImage(photo.gatsbyImageData)}
+                        alt={photo.id}
+                        className="collection-img hover:cursor-pointer duration-500"
                       />
                     </div>
                   )
@@ -186,10 +286,10 @@ function Records({ data }) {
         <MDXRenderer>{record.aboutDescription.childMdx.body}</MDXRenderer>
         <ReturnToHome />
         {modal && (
-          <div className="fixed flex justify-center items-center h-screen w-full top-0 left-0 bg-blurred">
+          <div className="fixed flex justify-center items-center h-screen w-full top-0 left-0 bg-blurred flex-row">
             <GatsbyImage
               image={currImage.gatsbyImageData}
-              className=" max-w-screen-xl h-[90vh] cursor-pointer p-16"
+              className="h-[95vh] cursor-pointer p-16"
               alt={records.title}
               key={currImage.id}
               objectFit="contain"
@@ -219,7 +319,7 @@ export const records = graphql`
       description
       location
       featuredImage {
-        gatsbyImageData
+        gatsbyImageData(formats: WEBP, quality: 100, placeholder: BLURRED)
       }
       prefaceDescription {
         childMdx {
@@ -234,6 +334,7 @@ export const records = graphql`
       imageBlock1 {
         gatsbyImageData
         height
+        width
         description
       }
       dayTwoDescription {
@@ -244,6 +345,7 @@ export const records = graphql`
       imageBlock2 {
         gatsbyImageData
         height
+        width
         description
       }
       dayThreeDescription {
@@ -253,6 +355,7 @@ export const records = graphql`
       }
       imageBlock3 {
         gatsbyImageData
+        width
         height
         description
       }
@@ -280,6 +383,18 @@ export const records = graphql`
       imageBlock4 {
         gatsbyImageData
         height
+        width
+        description
+      }
+      dayFiveDescription {
+        childMdx {
+          body
+        }
+      }
+      imageBlock5 {
+        gatsbyImageData
+        height
+        width
         description
       }
     }

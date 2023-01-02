@@ -13,6 +13,7 @@ function Banner() {
           node {
             title
             slug
+            bannerDescription
             id
             Banner {
               gatsbyImageData(
@@ -39,7 +40,7 @@ function Banner() {
             // Rather than BG image (?)
             <BgImage
               image={getImage(edge.node.Banner)}
-              className="object-contain p-0 m-0"
+              className="object-cover p-0 m-0"
               style={{ height: "100vh" }}
             >
               <div className="navbar text-black mb-2 banner-animation">
@@ -53,7 +54,6 @@ function Banner() {
                     <div className="lg:w-[900px] md:w-[600px] mx-auto">
                       <div class="w-full border-t border-gray-700"></div>
                     </div>
-
                     <div className="flex justify-center mt-1 font-mono">
                       <Link
                         to="/about"
@@ -69,12 +69,6 @@ function Banner() {
                       >
                         GEAR
                       </Link>
-                      {/* <Link
-                    to="/"
-                    className="text-base hover:text-sky-700 duration-500 lg:mr-3 md:mr-3 sm:mr-3 mr-3"
-                  >
-                    CONTACT
-                  </Link> */}
                       <a
                         href="mailto:james.ide775@gmail.com"
                         target="_#"
@@ -95,12 +89,21 @@ function Banner() {
                 style={{ height: `83vh` }}
               >
                 <div className="text-center">
-                  <h1 className="text-3xl text-white">{edge.node.title}</h1>
+                  <h1 className="text-6xl text-white font-playfair">
+                    {edge.node.title}
+                  </h1>
                   {/* TODO STYLING */}
-                  <p className="text-1xl text-white">
-                    SEE MORE
-                    {/* TODO: BUTTON LINK TO SLUG */}
+                  <p className="text-white text-lg mt-2 mb-5 font-medium">
+                    {edge.node.bannerDescription}
                   </p>
+                  <Link
+                    to={`records/${edge.node.slug}`}
+                    className="text-md w-max border-2 mx-auto font-medium
+                  p-2 bg-white text-black rounded hover:cursor-pointer duration-500 mt-4
+                  hover:bg-neutral-300 "
+                  >
+                    READ MORE
+                  </Link>
                 </div>
               </div>
             </BgImage>

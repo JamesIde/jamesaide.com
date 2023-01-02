@@ -131,9 +131,6 @@ export const entries = graphql`
   query MyQuery($slug: String!) {
     contentfulEntries(slug: { eq: $slug }) {
       title
-      featuredImage {
-        gatsbyImageData
-      }
       date(formatString: "MMMM Do, YYYY")
       id
       slug

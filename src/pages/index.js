@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <>
       <Helmet title="Home" />
-      <Navigation />
-      {/* <Banner /> */}
+      {/* <Navigation /> */}
+      <Banner />
       {/* Nav goes once banner is updated after LP */}
       {/* <Navigation /> */}
       <FeaturedRecords />
