@@ -32,7 +32,7 @@ function FeaturedRecords() {
       </h1>
       <div className="mx-auto xl:w-[35%] lg:w-[70%] md:w-[70%] h-auto mt-5 mb-5">
         <div className="grid grid-cols-1 gap-3 ">
-          {latestRecord.edges.slice(1).map(edge => {
+          {latestRecord.edges.map(edge => {
             return (
               <Record
                 slug={edge.node.slug}

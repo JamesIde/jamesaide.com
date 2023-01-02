@@ -286,24 +286,17 @@ function Records({ data }) {
         <MDXRenderer>{record.aboutDescription.childMdx.body}</MDXRenderer>
         <ReturnToHome />
         {modal && (
-          <div className="fixed flex justify-center items-center h-screen w-full top-0 left-0 bg-blurred flex-row">
+          <div className="fixed flex justify-center items-center h-screen w-in top-0 left-0 bg-blurred flex-row">
             <GatsbyImage
               image={currImage.gatsbyImageData}
-              className="h-[95vh] cursor-pointer p-16"
+              className="cursor-pointer p-16 h-[96vh]  object-contain"
               alt={records.title}
               key={currImage.id}
               objectFit="contain"
             />
-            {currImage.height === 4032 ? (
-              <p className="text-white fixed xl:mt-[875px] lg:mt-[850px] md:mt-[850px] mt-[800px]">
-                {currImage.description}
-                {/* if height = 4032 */}
-              </p>
-            ) : (
-              <p className="text-white fixed xl:mt-[875px] lg:mt-[850px] md:mt-[850px] mt-80">
-                {currImage.description}
-              </p>
-            )}
+            <p className="text-white fixed 2xl:mt-[1250px] xl:mt-[800px] lg:mt-[850px] md:mt-[850px] mt-[800px]">
+              {currImage.description}
+            </p>
           </div>
         )}
       </div>

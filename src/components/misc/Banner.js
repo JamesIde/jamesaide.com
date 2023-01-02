@@ -36,8 +36,6 @@ function Banner() {
       <div>
         {banner.map(function (edge) {
           return (
-            // Swiper component with background URL as this
-            // Rather than BG image (?)
             <BgImage
               image={getImage(edge.node.Banner)}
               className="object-cover p-0 m-0"
